@@ -15,9 +15,9 @@ class OnboardingViewController: UIViewController {
 
     @IBOutlet weak var pageControl: UIPageControl!
     // MARK: - Variables and Const
-    var slides: [OnboardingSlide] = [OnboardingData.slide1, OnboardingData.slide2, OnboardingData.slide3]
+    private let slides: [OnboardingSlide] = [OnboardingData.slide1, OnboardingData.slide2, OnboardingData.slide3]
 
-    var currentPage = 0 {
+    private var currentPage = 0 {
         didSet {
             if currentPage == slides.count - 1 {
                 nextButton.setTitle("Get started!", for: .normal)
@@ -34,7 +34,7 @@ class OnboardingViewController: UIViewController {
         collectionView.dataSource = self
     }
     // MARK: - IBAction
-    @IBAction func nextButtonAction(_ sender: Any) {
+    @IBAction private func nextButtonAction(_ sender: Any) {
         if currentPage == slides.count - 1 {
             let controller = (storyboard?.instantiateViewController(identifier: "HomeTC") as? UITabBarController)!
             controller.modalPresentationStyle = .fullScreen
@@ -46,17 +46,8 @@ class OnboardingViewController: UIViewController {
             collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
         }
     }
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
 }
-
+// MARK: - Extensions
 extension OnboardingViewController:
     UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     public func collectionView(_ collectionView: UICollectionView,
