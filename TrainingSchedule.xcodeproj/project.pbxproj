@@ -21,6 +21,9 @@
 		496DA6D12C2BB7B500147617 /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496DA6D02C2BB7B500147617 /* OnboardingSlide.swift */; };
 		496DA6D32C2BBA9300147617 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496DA6D22C2BBA9300147617 /* OnboardingCollectionViewCell.swift */; };
 		496DA6DA2C2BE6F500147617 /* OnboardingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496DA6D92C2BE6F500147617 /* OnboardingData.swift */; };
+		49CCED602C2D0DA100F1B513 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CCED5F2C2D0DA100F1B513 /* WeatherService.swift */; };
+		49CCED622C2D100C00F1B513 /* WeatherStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CCED612C2D100C00F1B513 /* WeatherStatus.swift */; };
+		49CCED662C2D399400F1B513 /* WeatherViewModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CCED652C2D399400F1B513 /* WeatherViewModal.swift */; };
 		8385CAD75C0B08DB04B816F1 /* Pods_TrainingSchedule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6A40F2F52BB8F335AB68AD4 /* Pods_TrainingSchedule.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +45,9 @@
 		496DA6D02C2BB7B500147617 /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
 		496DA6D22C2BBA9300147617 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		496DA6D92C2BE6F500147617 /* OnboardingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingData.swift; sourceTree = "<group>"; };
+		49CCED5F2C2D0DA100F1B513 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
+		49CCED612C2D100C00F1B513 /* WeatherStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherStatus.swift; sourceTree = "<group>"; };
+		49CCED652C2D399400F1B513 /* WeatherViewModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModal.swift; sourceTree = "<group>"; };
 		881B9C2DB744B2773087EF9A /* Pods-TrainingSchedule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrainingSchedule.release.xcconfig"; path = "Target Support Files/Pods-TrainingSchedule/Pods-TrainingSchedule.release.xcconfig"; sourceTree = "<group>"; };
 		E6A40F2F52BB8F335AB68AD4 /* Pods_TrainingSchedule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrainingSchedule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -112,6 +118,8 @@
 		496DA6AD2C2BA9ED00147617 /* TrainingSchedule */ = {
 			isa = PBXGroup;
 			children = (
+				49CCED642C2D398500F1B513 /* ViewModal */,
+				49CCED5E2C2D0D3300F1B513 /* Services */,
 				49463A722C2BFE8A00B40AC9 /* Extensions */,
 				496DA6D82C2BE6D500147617 /* Assets */,
 				496DA6CC2C2BB30100147617 /* Views */,
@@ -138,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				496DA6D02C2BB7B500147617 /* OnboardingSlide.swift */,
+				49CCED612C2D100C00F1B513 /* WeatherStatus.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -168,6 +177,22 @@
 				496DA6D92C2BE6F500147617 /* OnboardingData.swift */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		49CCED5E2C2D0D3300F1B513 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				49CCED5F2C2D0DA100F1B513 /* WeatherService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		49CCED642C2D398500F1B513 /* ViewModal */ = {
+			isa = PBXGroup;
+			children = (
+				49CCED652C2D399400F1B513 /* WeatherViewModal.swift */,
+			);
+			path = ViewModal;
 			sourceTree = "<group>";
 		};
 		6B5FA3F6B9E9569CC3921218 /* Pods */ = {
@@ -300,11 +325,14 @@
 				49463A712C2BFCCE00B40AC9 /* TabbarViewController.swift in Sources */,
 				496DA6AF2C2BA9ED00147617 /* AppDelegate.swift in Sources */,
 				496DA6CF2C2BB34500147617 /* OnboardingViewController.swift in Sources */,
+				49CCED602C2D0DA100F1B513 /* WeatherService.swift in Sources */,
+				49CCED662C2D399400F1B513 /* WeatherViewModal.swift in Sources */,
 				496DA6B92C2BA9ED00147617 /* TrainingSchedule.xcdatamodeld in Sources */,
 				496DA6DA2C2BE6F500147617 /* OnboardingData.swift in Sources */,
 				496DA6D12C2BB7B500147617 /* OnboardingSlide.swift in Sources */,
 				496DA6D32C2BBA9300147617 /* OnboardingCollectionViewCell.swift in Sources */,
 				49463A762C2C01D600B40AC9 /* UserDefaults+Extension.swift in Sources */,
+				49CCED622C2D100C00F1B513 /* WeatherStatus.swift in Sources */,
 				496DA6B12C2BA9ED00147617 /* SceneDelegate.swift in Sources */,
 				49463A792C2C037E00B40AC9 /* WeatherViewController.swift in Sources */,
 			);
