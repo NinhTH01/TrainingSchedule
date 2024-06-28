@@ -8,36 +8,44 @@ import Foundation
 
 final class WeatherService {
 
+    // MARK: Const
+
     private let apiKey = "2331c2360840269c7bd115ab58a88269"
 
-    public func fetchWeatherAPI(lat: Double, long: Double, completion: @escaping(WeatherStatus) -> Void) {
-        DispatchQueue.global().async(execute: {
-            let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?lat=\(lat)&lon=\(long)&appid=\(self.apiKey)")
+    private let baseWeatherURL = "https://api.openweathermap.org/data/2.5"
 
-            let task = URLSession.shared.dataTask(with: url!) { data, response, error in
-                if let error = error {
-                    print("Error: \(error.localizedDescription)")
-                    return
-                }
+    // MARK: Fetch API function
 
-                guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-                    print("Error: HTTP Response Code Error")
-                    return
-                }
+    func getCurrentWeather(lat: Double, long: Double, completion: @escaping(Result<WeatherStatus, Error>) -> Void) {
+        let url = URL(string: "\(baseWeatherURL)/weather?lat=\(lat)&lon=\(long)&appid=\(self.apiKey)")!
 
-                if data == nil {
-                    print("Error: No Response")
-                    return
-                }
-
-                do {
-                    let weatherData = try JSONDecoder().decode(WeatherStatus.self, from: data!)
-                    completion((weatherData))
-                } catch let decoderError {
-                    print("Error: \(decoderError)")
+        DispatchQueue.global().async {
+            URLSession.shared.fetchData(for: url) { (result: Result<WeatherStatus, Error>) in
+                switch result {
+                case .success(let weatherStatus):
+                    completion(.success(weatherStatus))
+                case .failure(let error):
+                    completion(.failure(error))
                 }
             }
-            task.resume()
-        })
+        }
     }
+
+    func getFiveDaysForecast(lat: Double, long: Double,
+                             completion: @escaping(Result<WeatherForecastStatus, Error>) -> Void) {
+        let url = URL(string: "\(baseWeatherURL)/forecast?lat=\(lat)&lon=\(long)&appid=\(self.apiKey)")!
+
+        DispatchQueue.global().async {
+            URLSession.shared.fetchData(for: url) { (result: Result<WeatherForecastStatus, Error>) in
+                switch result {
+                case .success(let weatherForecaseStatus):
+                    completion(.success(weatherForecaseStatus))
+                case .failure(let error):
+                    print(error)
+                    completion(.failure(error))
+                }
+            }
+        }
+    }
+
 }
