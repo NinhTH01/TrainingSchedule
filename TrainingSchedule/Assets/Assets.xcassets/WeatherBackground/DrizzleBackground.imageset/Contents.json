@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "desktop-wallpaper-rain-drops-rain-graphy-sound-of-rain-dancing-in-the-rain.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

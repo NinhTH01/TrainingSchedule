@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "sky-background-nature-sky-blue-background-cloud-light-summer-day-sunny-weather-space-clear-sun-white-high-beautiful-landscape-outdoors-sunlight-cloudy-outdoor-abstract-wallpaper-free-photo.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
