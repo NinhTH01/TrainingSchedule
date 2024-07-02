@@ -31,6 +31,17 @@ class WeatherHeaderView: UIView {
         commonSetup()
     }
 
+    override func awakeFromNib() {
+        super.awakeFromNib()
+
+        contentView.frame = bounds
+        contentView.autoresizingMask = [
+            UIView.AutoresizingMask.flexibleWidth,
+            UIView.AutoresizingMask.flexibleHeight
+        ]
+        addSubview(contentView)
+    }
+
     private func commonSetup() {
         Bundle.main.loadNibNamed("WeatherHeaderView", owner: self)
         self.addSubview(contentView)

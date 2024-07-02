@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_72" orientation="portrait" appearance="light"/>
+    <device id="iPad13_0rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -15,11 +15,11 @@
             <objects>
                 <viewController storyboardIdentifier="OnboardingViewController" id="BYZ-38-t0r" customClass="OnboardingViewController" customModule="TrainingSchedule" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1032" height="1376"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3YF-k1-IK8">
-                                <rect key="frame" x="0.0" y="59" width="430" height="727.33333333333337"/>
+                                <rect key="frame" x="0.0" y="24" width="1032" height="1220"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="r5r-Zv-UQJ">
                                     <size key="itemSize" width="431" height="592"/>
@@ -29,7 +29,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="OnboardingCollectionViewCell" id="oAA-33-Tg7" customClass="OnboardingCollectionViewCell" customModule="TrainingSchedule" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="67.666666666666671" width="431" height="592"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="431" height="592"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="PEY-XF-Kbf">
                                             <rect key="frame" x="0.0" y="0.0" width="431" height="592"/>
@@ -88,12 +88,12 @@
                                 </cells>
                             </collectionView>
                             <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="yGM-e8-c9a">
-                                <rect key="frame" x="157.33333333333334" y="786.33333333333337" width="115.66666666666666" height="25.666666666666629"/>
+                                <rect key="frame" x="458" y="1244" width="116.5" height="26"/>
                                 <color key="pageIndicatorTintColor" systemColor="systemGray3Color"/>
                                 <color key="currentPageIndicatorTintColor" red="0.0" green="0.0" blue="0.0" alpha="0.7036830357142857" colorSpace="custom" customColorSpace="displayP3"/>
                             </pageControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2fn-n8-ddy">
-                                <rect key="frame" x="129" y="828" width="172" height="50"/>
+                                <rect key="frame" x="309.5" y="1286" width="413" height="50"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.69741177721088432" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="ApS-5Y-5U6"/>
@@ -142,46 +142,46 @@
             <objects>
                 <viewController id="OMZ-YC-3vh" customClass="WeatherViewController" customModule="TrainingSchedule" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="akO-PI-ogI">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1032" height="1376"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CloudBackground" translatesAutoresizingMaskIntoConstraints="NO" id="PFU-yG-7B3">
-                                <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1032" height="1376"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="zjw-M2-M2l">
-                                <rect key="frame" x="0.0" y="59" width="430" height="790"/>
+                                <rect key="frame" x="0.0" y="24" width="1032" height="1282"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J1p-u1-PGe" customClass="WeatherHeaderView" customModule="TrainingSchedule" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="430" height="110"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="1032" height="82"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cVL-lQ-o9S">
-                                        <rect key="frame" x="0.0" y="110" width="430" height="680"/>
+                                        <rect key="frame" x="0.0" y="82" width="1032" height="1200"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kZD-QG-7CB">
-                                                <rect key="frame" x="0.0" y="0.0" width="430" height="1200"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="1032" height="400"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d0p-kd-JjF">
-                                                        <rect key="frame" x="0.0" y="0.0" width="430" height="1200"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="1032" height="400"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="yNZ-aD-3m3" customClass="RoundCornerStackView" customModule="TrainingSchedule" customModuleProvider="target">
-                                                                <rect key="frame" x="21.666666666666657" y="0.0" width="387" height="140"/>
+                                                                <rect key="frame" x="51.5" y="0.0" width="929" height="140"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="    Weather Forecast for next 5 days /3 hours  " lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Fb-YC-tbM">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="387" height="39"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="929" height="39"/>
                                                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="16"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <view alpha="0.25" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ms8-js-LFf">
-                                                                        <rect key="frame" x="0.0" y="39" width="387" height="1"/>
+                                                                        <rect key="frame" x="0.0" y="39" width="929" height="1"/>
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="1" id="F6h-Bc-Zqr"/>
                                                                         </constraints>
                                                                     </view>
                                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="E04-r8-stv">
-                                                                        <rect key="frame" x="0.0" y="40" width="387" height="100"/>
+                                                                        <rect key="frame" x="0.0" y="40" width="929" height="100"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="100" id="f2I-eV-Ams"/>
@@ -215,70 +215,76 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </stackView>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3wu-N0-7rc" customClass="WeatherWindView" customModule="TrainingSchedule" customModuleProvider="target">
-                                                                <rect key="frame" x="21.666666666666657" y="150" width="387" height="160"/>
+                                                                <rect key="frame" x="51.5" y="150" width="929" height="160"/>
                                                                 <color key="backgroundColor" name="CloudColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="160" id="xyx-8x-Uk0"/>
                                                                 </constraints>
                                                             </view>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="RhG-wz-UVd">
-                                                                <rect key="frame" x="21.666666666666657" y="320" width="387" height="180"/>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="wUN-Zg-s3m">
+                                                                <rect key="frame" x="51.5" y="320" width="929" height="209"/>
                                                                 <subviews>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="phP-gL-Fvy" customClass="WeatherStatusView" customModule="TrainingSchedule" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
-                                                                        <color key="backgroundColor" name="CloudColor"/>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="RhG-wz-UVd">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="449.5" height="209"/>
+                                                                        <subviews>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="phP-gL-Fvy" customClass="WeatherStatusView" customModule="TrainingSchedule" customModuleProvider="target">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="209" height="209"/>
+                                                                                <color key="backgroundColor" name="CloudColor"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="width" secondItem="phP-gL-Fvy" secondAttribute="height" multiplier="1:1" id="jvk-xg-VlD"/>
+                                                                                </constraints>
+                                                                            </view>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l2s-gy-uOP" customClass="WeatherStatusView" customModule="TrainingSchedule" customModuleProvider="target">
+                                                                                <rect key="frame" x="240.5" y="0.0" width="209" height="209"/>
+                                                                                <color key="backgroundColor" name="CloudColor"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="width" secondItem="l2s-gy-uOP" secondAttribute="height" multiplier="1:1" id="zqd-z2-42k"/>
+                                                                                </constraints>
+                                                                            </view>
+                                                                        </subviews>
+                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="width" secondItem="phP-gL-Fvy" secondAttribute="height" multiplier="1:1" id="jvk-xg-VlD"/>
+                                                                            <constraint firstItem="phP-gL-Fvy" firstAttribute="width" secondItem="RhG-wz-UVd" secondAttribute="width" multiplier="0.465116" id="xpu-YP-jtb"/>
                                                                         </constraints>
-                                                                    </view>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l2s-gy-uOP" customClass="WeatherStatusView" customModule="TrainingSchedule" customModuleProvider="target">
-                                                                        <rect key="frame" x="207" y="0.0" width="180" height="180"/>
-                                                                        <color key="backgroundColor" name="CloudColor"/>
+                                                                    </stackView>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZXD-kC-m1t">
+                                                                        <rect key="frame" x="479.5" y="0.0" width="449.5" height="209"/>
+                                                                        <subviews>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Igw-Pb-bcx" customClass="WeatherStatusView" customModule="TrainingSchedule" customModuleProvider="target">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="209" height="209"/>
+                                                                                <color key="backgroundColor" name="CloudColor"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="width" secondItem="Igw-Pb-bcx" secondAttribute="height" multiplier="1:1" id="8rf-Gu-IS8"/>
+                                                                                </constraints>
+                                                                            </view>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SxO-p1-OlV" customClass="WeatherStatusView" customModule="TrainingSchedule" customModuleProvider="target">
+                                                                                <rect key="frame" x="240.5" y="0.0" width="209" height="209"/>
+                                                                                <color key="backgroundColor" name="CloudColor"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="width" secondItem="SxO-p1-OlV" secondAttribute="height" multiplier="1:1" id="h5y-Vz-Vqn"/>
+                                                                                </constraints>
+                                                                            </view>
+                                                                        </subviews>
+                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="width" secondItem="l2s-gy-uOP" secondAttribute="height" multiplier="1:1" id="zqd-z2-42k"/>
+                                                                            <constraint firstItem="Igw-Pb-bcx" firstAttribute="width" secondItem="ZXD-kC-m1t" secondAttribute="width" multiplier="0.465116" id="vGp-te-vxr"/>
                                                                         </constraints>
-                                                                    </view>
+                                                                    </stackView>
                                                                 </subviews>
-                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <constraints>
-                                                                    <constraint firstItem="phP-gL-Fvy" firstAttribute="width" secondItem="RhG-wz-UVd" secondAttribute="width" multiplier="0.465116" id="xpu-YP-jtb"/>
-                                                                </constraints>
-                                                            </stackView>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZXD-kC-m1t">
-                                                                <rect key="frame" x="21.666666666666657" y="510" width="387" height="180"/>
-                                                                <subviews>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Igw-Pb-bcx" customClass="WeatherStatusView" customModule="TrainingSchedule" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
-                                                                        <color key="backgroundColor" name="CloudColor"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="width" secondItem="Igw-Pb-bcx" secondAttribute="height" multiplier="1:1" id="8rf-Gu-IS8"/>
-                                                                        </constraints>
-                                                                    </view>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SxO-p1-OlV" customClass="WeatherStatusView" customModule="TrainingSchedule" customModuleProvider="target">
-                                                                        <rect key="frame" x="207" y="0.0" width="180" height="180"/>
-                                                                        <color key="backgroundColor" name="CloudColor"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="width" secondItem="SxO-p1-OlV" secondAttribute="height" multiplier="1:1" id="h5y-Vz-Vqn"/>
-                                                                        </constraints>
-                                                                    </view>
-                                                                </subviews>
-                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <constraints>
-                                                                    <constraint firstItem="Igw-Pb-bcx" firstAttribute="width" secondItem="ZXD-kC-m1t" secondAttribute="width" multiplier="0.465116" id="vGp-te-vxr"/>
-                                                                </constraints>
+                                                                <variation key="heightClass=regular-widthClass=regular" axis="horizontal" spacing="30"/>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vpV-Jo-izN">
-                                                                <rect key="frame" x="21.666666666666657" y="700" width="387" height="180"/>
+                                                                <rect key="frame" x="51.5" y="539" width="929" height="209"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3MB-4T-owe" customClass="WeatherStatusView" customModule="TrainingSchedule" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="209" height="209"/>
                                                                         <color key="backgroundColor" name="CloudColor"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" secondItem="3MB-4T-owe" secondAttribute="height" multiplier="1:1" id="uwy-ed-F5X"/>
                                                                         </constraints>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t9W-j9-MqM" customClass="WeatherStatusView" customModule="TrainingSchedule" customModuleProvider="target">
-                                                                        <rect key="frame" x="207" y="0.0" width="180" height="180"/>
+                                                                        <rect key="frame" x="720" y="0.0" width="209" height="209"/>
                                                                         <color key="backgroundColor" name="CloudColor"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" secondItem="t9W-j9-MqM" secondAttribute="height" multiplier="1:1" id="C1K-YB-9Hs"/>
@@ -287,38 +293,59 @@
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
-                                                                    <constraint firstItem="3MB-4T-owe" firstAttribute="width" secondItem="vpV-Jo-izN" secondAttribute="width" multiplier="0.465116" id="7ep-dK-KPA"/>
+                                                                    <constraint firstItem="3MB-4T-owe" firstAttribute="width" secondItem="vpV-Jo-izN" secondAttribute="width" multiplier="0.465116" id="JMz-gX-3hk"/>
                                                                 </constraints>
+                                                                <variation key="heightClass=regular-widthClass=regular">
+                                                                    <mask key="constraints">
+                                                                        <exclude reference="JMz-gX-3hk"/>
+                                                                    </mask>
+                                                                </variation>
                                                             </stackView>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstItem="ZXD-kC-m1t" firstAttribute="top" secondItem="RhG-wz-UVd" secondAttribute="bottom" constant="10" id="674-qc-4AT"/>
                                                             <constraint firstItem="3wu-N0-7rc" firstAttribute="top" secondItem="yNZ-aD-3m3" secondAttribute="bottom" constant="10" id="FNU-W3-hhj"/>
                                                             <constraint firstItem="3wu-N0-7rc" firstAttribute="centerX" secondItem="d0p-kd-JjF" secondAttribute="centerX" id="UO8-16-th4"/>
-                                                            <constraint firstItem="RhG-wz-UVd" firstAttribute="centerX" secondItem="d0p-kd-JjF" secondAttribute="centerX" id="UtV-87-ps7"/>
-                                                            <constraint firstItem="RhG-wz-UVd" firstAttribute="width" secondItem="d0p-kd-JjF" secondAttribute="width" multiplier="0.9" id="WV5-hR-NWd"/>
                                                             <constraint firstItem="3wu-N0-7rc" firstAttribute="width" secondItem="d0p-kd-JjF" secondAttribute="width" multiplier="0.9" id="X2R-BQ-w4N"/>
-                                                            <constraint firstItem="ZXD-kC-m1t" firstAttribute="centerX" secondItem="d0p-kd-JjF" secondAttribute="centerX" id="XYH-j0-GwP"/>
+                                                            <constraint firstItem="3MB-4T-owe" firstAttribute="height" secondItem="l2s-gy-uOP" secondAttribute="height" id="a2g-xg-i1V"/>
+                                                            <constraint firstItem="wUN-Zg-s3m" firstAttribute="centerX" secondItem="d0p-kd-JjF" secondAttribute="centerX" id="g0T-jo-sey"/>
+                                                            <constraint firstItem="wUN-Zg-s3m" firstAttribute="top" secondItem="3wu-N0-7rc" secondAttribute="bottom" constant="10" id="hbU-W4-d6i"/>
                                                             <constraint firstItem="vpV-Jo-izN" firstAttribute="centerX" secondItem="d0p-kd-JjF" secondAttribute="centerX" id="iL3-Bk-C5z"/>
                                                             <constraint firstItem="yNZ-aD-3m3" firstAttribute="top" secondItem="d0p-kd-JjF" secondAttribute="top" id="nMW-VG-o9e"/>
-                                                            <constraint firstItem="ZXD-kC-m1t" firstAttribute="width" secondItem="d0p-kd-JjF" secondAttribute="width" multiplier="0.9" id="sT7-Nk-Wp7"/>
-                                                            <constraint firstItem="RhG-wz-UVd" firstAttribute="top" secondItem="3wu-N0-7rc" secondAttribute="bottom" constant="10" id="upR-hc-vwE"/>
+                                                            <constraint firstItem="vpV-Jo-izN" firstAttribute="centerX" secondItem="d0p-kd-JjF" secondAttribute="centerX" id="rRc-HS-R5g"/>
+                                                            <constraint firstItem="vpV-Jo-izN" firstAttribute="top" secondItem="wUN-Zg-s3m" secondAttribute="bottom" constant="10" id="v1d-SH-kDL"/>
                                                             <constraint firstItem="vpV-Jo-izN" firstAttribute="width" secondItem="d0p-kd-JjF" secondAttribute="width" multiplier="0.9" id="xAx-4d-jmV"/>
-                                                            <constraint firstItem="vpV-Jo-izN" firstAttribute="top" secondItem="ZXD-kC-m1t" secondAttribute="bottom" constant="10" id="yvs-om-Vwe"/>
+                                                            <constraint firstItem="wUN-Zg-s3m" firstAttribute="width" secondItem="d0p-kd-JjF" secondAttribute="width" multiplier="0.9" id="xuq-R1-iyz"/>
                                                         </constraints>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <mask key="constraints">
+                                                                <exclude reference="iL3-Bk-C5z"/>
+                                                            </mask>
+                                                        </variation>
                                                     </view>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="yNZ-aD-3m3" firstAttribute="centerX" secondItem="kZD-QG-7CB" secondAttribute="centerX" id="3yh-YQ-0Ov"/>
                                                     <constraint firstItem="d0p-kd-JjF" firstAttribute="top" secondItem="kZD-QG-7CB" secondAttribute="top" priority="750" id="NDk-Vs-z16"/>
+                                                    <constraint firstAttribute="height" constant="400" id="Wp6-OE-qyg"/>
                                                     <constraint firstItem="d0p-kd-JjF" firstAttribute="leading" secondItem="kZD-QG-7CB" secondAttribute="leading" id="aBW-nW-XLp"/>
                                                     <constraint firstAttribute="trailing" secondItem="d0p-kd-JjF" secondAttribute="trailing" id="b71-6D-w2t"/>
                                                     <constraint firstItem="yNZ-aD-3m3" firstAttribute="width" secondItem="kZD-QG-7CB" secondAttribute="width" multiplier="0.9" id="ekH-rF-ewb"/>
                                                     <constraint firstAttribute="height" constant="1200" id="kWi-XJ-LnV"/>
                                                     <constraint firstAttribute="bottom" secondItem="d0p-kd-JjF" secondAttribute="bottom" id="mgb-tr-ZUC"/>
                                                 </constraints>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="Wp6-OE-qyg"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <mask key="constraints">
+                                                        <include reference="Wp6-OE-qyg"/>
+                                                        <exclude reference="kWi-XJ-LnV"/>
+                                                    </mask>
+                                                </variation>
                                             </view>
                                         </subviews>
                                         <constraints>
@@ -332,6 +359,11 @@
                                         </constraints>
                                         <viewLayoutGuide key="contentLayoutGuide" id="q4p-Yc-Pwd"/>
                                         <viewLayoutGuide key="frameLayoutGuide" id="WgA-G6-pOJ"/>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <mask key="constraints">
+                                                <include reference="UOC-4u-3Kh"/>
+                                            </mask>
+                                        </variation>
                                     </scrollView>
                                 </subviews>
                                 <constraints>
@@ -373,14 +405,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h0M-0d-TrG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="531.62790697674416" y="951.50214592274688"/>
+            <point key="canvasLocation" x="531.39534883720933" y="951.45348837209292"/>
         </scene>
         <!--Map-->
         <scene sceneID="occ-ss-1Pn">
             <objects>
                 <viewController id="GFk-Vb-Ub1" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uT0-Xx-0ha">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1032" height="1376"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="RWq-Kb-avd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -396,7 +428,7 @@
             <objects>
                 <viewController id="30m-uw-40c" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U27-dS-6qU">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1032" height="1376"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="nMv-cn-llZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -438,30 +470,30 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hanoi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="14L-cQ-oK9">
-                            <rect key="frame" x="170" y="0.0" width="90.333333333333314" height="43"/>
+                            <rect key="frame" x="170" y="0.0" width="90.5" height="43"/>
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="35"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="highlightedColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <color key="shadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="31" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="era-Xn-YmF">
-                            <rect key="frame" x="173.33333333333334" y="43" width="83.666666666666657" height="93"/>
+                            <rect key="frame" x="173.5" y="43" width="83.5" height="93"/>
                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="77"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                             <color key="shadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </label>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="FdK-LJ-hVs">
-                            <rect key="frame" x="150" y="163.33333333333334" width="130" height="20"/>
+                            <rect key="frame" x="150" y="163.5" width="130" height="20"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="H: 33" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZX-6r-d7a">
-                                    <rect key="frame" x="0.0" y="0.0" width="53.333333333333336" height="20"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="53.5" height="20"/>
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="highlightedColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="L: 26" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LMg-yB-VIj">
-                                    <rect key="frame" x="80.666666666666657" y="0.0" width="49.333333333333343" height="20"/>
+                                    <rect key="frame" x="80.5" y="0.0" width="49.5" height="20"/>
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="highlightedColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -473,7 +505,7 @@
                             </constraints>
                         </stackView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mostly Cloudy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUM-b3-Xoz">
-                            <rect key="frame" x="145" y="136" width="140.33333333333337" height="27.333333333333343"/>
+                            <rect key="frame" x="145" y="136" width="140.5" height="27.5"/>
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
