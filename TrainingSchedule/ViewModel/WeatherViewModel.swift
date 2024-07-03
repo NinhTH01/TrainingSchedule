@@ -56,7 +56,14 @@ class WeatherViewModel: NSObject {
 
     func setupLocationManager() {
         locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
+
+        if locationManager.authorizationStatus == .authorizedAlways {
+            getWeatherStatus(lat: locationManager.location!.coordinate.latitude,
+                             long: locationManager.location!.coordinate.longitude)
+        } else {
+            locationManager.requestWhenInUseAuthorization()
+        }
+
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
     }
 
@@ -76,8 +83,10 @@ extension WeatherViewModel: CLLocationManagerDelegate {
 
         let coordinate = manager.location?.coordinate
 
-        if coordinate?.latitude != nil && coordinate?.longitude != nil {
-            getWeatherStatus(lat: coordinate!.latitude, long: coordinate!.longitude)
+        if manager.authorizationStatus == .authorizedWhenInUse || manager.authorizationStatus == .authorizedAlways {
+            if coordinate?.latitude != nil && coordinate?.longitude != nil {
+                getWeatherStatus(lat: coordinate!.latitude, long: coordinate!.longitude)
+            }
         }
     }
 }
