@@ -127,11 +127,6 @@ extension WeatherViewController: UIScrollViewDelegate,
     }
 
     // MARK: - Functions
-    private func showErrorAlert(message: String) {
-        let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: .default))
-        present(alertController, animated: true)
-    }
 
     private func updateData(weatherStatus: WeatherStatus?) {
         currentWeatherStatus = weatherStatus

@@ -6,7 +6,7 @@
 //
 import CoreLocation
 import GoogleMaps
-    // MARK: - Protocol
+// MARK: - Protocol
 protocol MapViewModelDelegate: AnyObject {
     func didUpdateLocations(location: CLLocation, locations: [CLLocation])
     func didChangeAuthorization()
@@ -21,6 +21,8 @@ class MapViewModel: NSObject {
     let context = (UIApplication.shared.delegate as? AppDelegate)!.persistentContainer.viewContext
 
     weak var delegate: MapViewModelDelegate?
+
+    @Published var errorMessage: String?
 
     // MARK: - Functions
     func setupLocationManager() {
@@ -53,11 +55,16 @@ class MapViewModel: NSObject {
         let runningHistory = RunningHistory(context: context)
         runningHistory.distance = distance
         runningHistory.createdAt = Date()
-        do {
-           try context.save()
-        } catch {
-
+        DispatchQueue.global().async {
+            do {
+                try self.context.save()
+            } catch let error {
+                DispatchQueue.main.async {
+                    self.errorMessage = error.localizedDescription
+                }
+            }
         }
+
     }
 }
 

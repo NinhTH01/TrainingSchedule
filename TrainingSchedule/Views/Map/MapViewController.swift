@@ -8,6 +8,7 @@
 import UIKit
 import CoreLocation
 import GoogleMaps
+import Combine
 
 class MapViewController: UIViewController {
     // MARK: - IBOutlet
@@ -29,6 +30,8 @@ class MapViewController: UIViewController {
 
     private var isUpdating: Bool = false
 
+    private var cancellables = Set<AnyCancellable>()
+
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +39,8 @@ class MapViewController: UIViewController {
         viewModel.setupLocationManager()
 
         mapPopupView.delegate = self
+
+        setupBind()
     }
 
     // MARK: - IBAction
@@ -62,6 +67,16 @@ class MapViewController: UIViewController {
 
 extension MapViewController: MapViewModelDelegate, MapPopViewControllerDelegate {
     // MARK: - Functions
+    private func setupBind() {
+        viewModel.$errorMessage
+            .compactMap { $0 }
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] errorMessage in
+                self?.showErrorAlert(message: errorMessage)
+            }
+            .store(in: &cancellables)
+    }
+
     func drawPolyline(location: CLLocation, locations: [CLLocation]) {
         guard let location = locations.last else { return }
 
