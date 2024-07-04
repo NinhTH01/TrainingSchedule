@@ -1,16 +1,24 @@
 PODS:
+  - GoogleMaps (8.4.0):
+    - GoogleMaps/Maps (= 8.4.0)
+  - GoogleMaps/Base (8.4.0)
+  - GoogleMaps/Maps (8.4.0):
+    - GoogleMaps/Base
   - SwiftLint (0.55.1)
 
 DEPENDENCIES:
+  - GoogleMaps (= 8.4.0)
   - SwiftLint
 
 SPEC REPOS:
   trunk:
+    - GoogleMaps
     - SwiftLint
 
 SPEC CHECKSUMS:
+  GoogleMaps: 8939898920281c649150e0af74aa291c60f2e77d
   SwiftLint: 3fe909719babe5537c552ee8181c0031392be933
 
-PODFILE CHECKSUM: 84c76c5ac88a5a305f9499658cb3270df8b772f0
+PODFILE CHECKSUM: 07f1f94de719f53c870e2ffbae56f9ae9be6dbba
 
 COCOAPODS: 1.15.2

@@ -7,3 +7,4 @@ line_length:
 
 excluded:
 - TrainingSchedule/Assets
+- Pods

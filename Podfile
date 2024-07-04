@@ -6,5 +6,6 @@ target 'TrainingSchedule' do
   use_frameworks!
 
   # Pods for TrainingSchedule
+  pod 'GoogleMaps', '8.4.0'
   pod 'SwiftLint'
 end
