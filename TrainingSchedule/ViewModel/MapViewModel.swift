@@ -18,6 +18,8 @@ class MapViewModel: NSObject {
     // MARK: - Consts and variables
     let locationManager = CLLocationManager()
 
+    let context = (UIApplication.shared.delegate as? AppDelegate)!.persistentContainer.viewContext
+
     weak var delegate: MapViewModelDelegate?
 
     // MARK: - Functions
@@ -28,7 +30,6 @@ class MapViewModel: NSObject {
             || locationManager.authorizationStatus == .authorizedWhenInUse {
             locationManager.startUpdatingLocation()
             delegate?.setupMap(location: locationManager.location!)
-
         } else {
             locationManager.requestAlwaysAuthorization()
         }
@@ -44,9 +45,20 @@ class MapViewModel: NSObject {
             let location2 = CLLocation(latitude: coordinate2.latitude, longitude: coordinate2.longitude)
             polylineDistance += location1.distance(from: location2)
         }
+        addDistanceToDatabase(distance: polylineDistance)
         return String(format: "%.2f", polylineDistance)
     }
 
+    func addDistanceToDatabase(distance: Double) {
+        let runningHistory = RunningHistory(context: context)
+        runningHistory.distance = distance
+        runningHistory.createdAt = Date()
+        do {
+           try context.save()
+        } catch {
+
+        }
+    }
 }
 
 extension MapViewModel: CLLocationManagerDelegate {
