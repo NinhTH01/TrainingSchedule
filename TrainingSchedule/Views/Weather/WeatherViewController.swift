@@ -107,7 +107,7 @@ extension WeatherViewController: UIScrollViewDelegate,
     // MARK: - CollectionView Delegate
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 
-        return currentWeatherForecastStatus?.list.count ?? 0
+        return currentWeatherForecastStatus?.list?.count ?? 0
     }
 
     func collectionView(_ collectionView: UICollectionView,
@@ -116,7 +116,7 @@ extension WeatherViewController: UIScrollViewDelegate,
         let cell = (collectionView.dequeueReusableCell(
             withReuseIdentifier: "cell", for: indexPath) as? WeatherCollectionViewCell)!
 
-        cell.setup(currentWeatherForecastStatus?.list[indexPath.row])
+        cell.setup(currentWeatherForecastStatus?.list?[indexPath.row])
 
         return cell
     }
@@ -136,43 +136,43 @@ extension WeatherViewController: UIScrollViewDelegate,
     private func updateData(weatherStatus: WeatherStatus?) {
         currentWeatherStatus = weatherStatus
 
-        forecastStackView.changeBackgroundColorByWeather(weather: weatherStatus?.weather[0].main)
+        forecastStackView.changeBackgroundColorByWeather(weather: weatherStatus?.weather?[0].main)
 
         windStatusView.setup(
-            gust: weatherStatus?.wind.gust.meterSectoKilometHourString() ?? "0",
-            windDirection: String(weatherStatus?.wind.deg ?? 0),
-            windSpeed: weatherStatus?.wind.speed.meterSectoKilometHourString() ?? "0",
-            weatherMain: weatherStatus?.weather[0].main)
+            gust: weatherStatus?.wind?.gust?.meterSectoKilometHourString() ?? "0",
+            windDirection: String(weatherStatus?.wind?.deg ?? 0),
+            windSpeed: weatherStatus?.wind?.speed?.meterSectoKilometHourString() ?? "0",
+            weatherMain: weatherStatus?.weather?[0].main)
 
-        humidityView.setup(title: "HUMIDITY", value: "\(weatherStatus?.main.humidity ?? 0)%",
-                                 weatherMain: weatherStatus?.weather[0].main)
+        humidityView.setup(title: "HUMIDITY", value: "\(weatherStatus?.main?.humidity ?? 0)%",
+                           weatherMain: weatherStatus?.weather?[0].main)
 
         feelsLikeView.setup(title: "FEELS LIKE",
-                                  value: weatherStatus?.main.feelsLike.kelvinToCelsiusString() ?? "_",
-                                  weatherMain: weatherStatus?.weather[0].main)
+                            value: weatherStatus?.main?.feelsLike?.kelvinToCelsiusString() ?? "_",
+                            weatherMain: weatherStatus?.weather?[0].main)
 
         sunsetView.setup(title: "SUNSET",
-                               value: weatherStatus?.sys.sunset.unixTimeToHourMinuteString() ?? "_",
-                               weatherMain: weatherStatus?.weather[0].main)
+                         value: weatherStatus?.sys?.sunset?.unixTimeToHourMinuteString() ?? "_",
+                         weatherMain: weatherStatus?.weather?[0].main)
 
         sunriseView.setup(title: "SUNRISE",
-                                value: weatherStatus?.sys.sunrise.unixTimeToHourMinuteString() ?? "_",
-                                weatherMain: weatherStatus?.weather[0].main)
+                          value: weatherStatus?.sys?.sunrise?.unixTimeToHourMinuteString() ?? "_",
+                          weatherMain: weatherStatus?.weather?[0].main)
 
-        pressureView.setup(title: "PRESSURE", value: "\(weatherStatus?.main.pressure.seperatorFormat() ?? "0")\nhPa",
-                                 weatherMain: weatherStatus?.weather[0].main)
+        pressureView.setup(title: "PRESSURE", value: "\(weatherStatus?.main?.pressure?.seperatorFormat() ?? "0")\nhPa",
+                           weatherMain: weatherStatus?.weather?[0].main)
 
         visibilityView.setup(title: "VISIBILITY", value: "\((weatherStatus?.visibility ?? 0) / 1000)km",
-                                   weatherMain: weatherStatus?.weather[0].main)
+                             weatherMain: weatherStatus?.weather?[0].main)
 
         headerView.setup(
-            temp: weatherStatus?.main.temp.kelvinToCelsiusString(),
+            temp: weatherStatus?.main?.temp?.kelvinToCelsiusString(),
             city: weatherStatus?.name,
-            description: weatherStatus?.weather[0].description.capitalizedFirstLetterOfEachWord(),
-            highestTemp: weatherStatus?.main.tempMax.kelvinToCelsiusString(),
-            lowestTemp: weatherStatus?.main.tempMin.kelvinToCelsiusString())
+            description: weatherStatus?.weather?[0].description?.capitalizedFirstLetterOfEachWord(),
+            highestTemp: weatherStatus?.main?.tempMax?.kelvinToCelsiusString(),
+            lowestTemp: weatherStatus?.main?.tempMin?.kelvinToCelsiusString())
 
-        backgroundImageView.changeBackgroundByWeather(weather: weatherStatus?.weather[0].main)
+        backgroundImageView.changeBackgroundByWeather(weather: weatherStatus?.weather?[0].main)
     }
 
     // MARK: - Sink datas
@@ -230,12 +230,12 @@ extension WeatherViewController: UIScrollViewDelegate,
         // Handle temp label faded and new label appear when offSetY value = 20% of screen height
         if currentOffSetY > tempFadedOffSetHeight {
             let fadedAlpha = ( currentOffSetY - tempFadedOffSetHeight) / descriptionFadedOffSetHeight
-            headerView.tempLabel.text = "\(currentWeatherStatus?.weather[0].description.capitalizedFirstLetterOfEachWord() ?? "") | \(currentWeatherStatus?.main.temp.kelvinToCelsiusString() ?? "")"
+            headerView.tempLabel.text = "\(currentWeatherStatus?.weather?[0].description?.capitalizedFirstLetterOfEachWord() ?? "") | \(currentWeatherStatus?.main?.temp?.kelvinToCelsiusString() ?? "")"
             headerView.tempLabel.font = headerView.tempLabel.font.withSize(25)
             headerView.tempLabel.alpha = fadedAlpha
         } else {
             let fadedAlpha = (tempFadedOffSetHeight - currentOffSetY) / descriptionFadedOffSetHeight
-            headerView.tempLabel.text = currentWeatherStatus?.main.temp.kelvinToCelsiusString()
+            headerView.tempLabel.text = currentWeatherStatus?.main?.temp?.kelvinToCelsiusString()
             headerView.tempLabel.alpha = fadedAlpha
             headerView.tempLabel.font = headerView.tempLabel.font.withSize(77)
         }

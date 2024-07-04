@@ -61,8 +61,8 @@ class WeatherViewModel: NSObject {
         if locationManager.authorizationStatus == .authorizedAlways
             || locationManager.authorizationStatus == .authorizedWhenInUse {
             locationManager.requestLocation()
-            getWeatherStatus(lat: locationManager.location!.coordinate.latitude,
-                             long: locationManager.location!.coordinate.longitude)
+//            getWeatherStatus(lat: locationManager.location!.coordinate.latitude,
+//                             long: locationManager.location!.coordinate.longitude)
         } else {
             locationManager.requestWhenInUseAuthorization()
         }

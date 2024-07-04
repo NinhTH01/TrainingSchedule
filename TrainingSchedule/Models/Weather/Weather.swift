@@ -9,38 +9,38 @@ import Foundation
 
 // MARK: - Clouds
 struct Clouds: Codable {
-    let all: Int
+    let all: Int?
 }
 
 // MARK: - Coord
 struct Coord: Codable {
-    let lon, lat: Double
+    let lon, lat: Double?
 }
 
 // MARK: - Sys
 struct Sys: Codable {
-    let type, id: Int
-    let country: String
-    let sunrise, sunset: Int
+    let type, id: Int?
+    let country: String?
+    let sunrise, sunset: Int?
 }
 
 // MARK: - Weather
 struct Weather: Codable {
-    let id: Int
-    let main: WeatherMain
-    let description, icon: String
+    let id: Int?
+    let main: WeatherMain?
+    let description, icon: String?
 }
 
 // MARK: - Wind
 struct Wind: Codable {
-    let speed: Double
-    let deg: Int
-    let gust: Double
+    let speed: Double?
+    let deg: Int?
+    let gust: Double?
 }
 
 // MARK: - Rain
 struct Rain: Codable {
-    let the3H: Double
+    let the3H: Double?
 
     enum CodingKeys: String, CodingKey {
         case the3H = "3h"
@@ -49,11 +49,11 @@ struct Rain: Codable {
 
 // MARK: - City
 struct City: Codable {
-    let id: Int
-    let name: String
-    let coord: Coord
-    let country: String
-    let population, timezone, sunrise, sunset: Int
+    let id: Int?
+    let name: String?
+    let coord: Coord?
+    let country: String?
+    let population, timezone, sunrise, sunset: Int?
 }
 
 enum Description: String, Codable {

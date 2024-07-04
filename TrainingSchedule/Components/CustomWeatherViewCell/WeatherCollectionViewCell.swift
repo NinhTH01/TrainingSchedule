@@ -16,10 +16,10 @@ class WeatherCollectionViewCell: UICollectionViewCell {
 
     func setup(_ cell: List?) {
 
-        tempLabel.text = cell?.main.temp.kelvinToCelsiusString() ?? "0"
+        tempLabel.text = cell?.main?.temp?.kelvinToCelsiusString() ?? "0"
 
-        timeLabel.text = cell?.dateTime.unixTimeToHourString()
+        timeLabel.text = cell?.dateTime?.unixTimeToHourString()
 
-        weatherIconImageView.image = cell?.weather[0].icon.iconMapper()
+        weatherIconImageView.image = cell?.weather?[0].icon?.iconMapper()
     }
 }

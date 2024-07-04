@@ -7,18 +7,18 @@
 import Foundation
 
 struct WeatherStatus: Codable {
-    let coord: Coord
-    let weather: [Weather]
-    let base: String
-    let main: Main
-    let visibility: Int
-    let wind: Wind
-    let clouds: Clouds
-    let dateTime: Int
-    let sys: Sys
-    let timezone, id: Int
-    let name: String
-    let cod: Int
+    let coord: Coord?
+    let weather: [Weather]?
+    let base: String?
+    let main: Main?
+    let visibility: Int?
+    let wind: Wind?
+    let clouds: Clouds?
+    let dateTime: Int?
+    let sys: Sys?
+    let timezone, id: Int?
+    let name: String?
+    let cod: Int?
 
     enum CodingKeys: String, CodingKey {
         case coord
@@ -39,8 +39,8 @@ struct WeatherStatus: Codable {
 
 // MARK: - Main
 struct Main: Codable {
-    let temp, feelsLike, tempMin, tempMax: Double
-    let pressure, humidity, seaLevel, grndLevel: Int
+    let temp, feelsLike, tempMin, tempMax: Double?
+    let pressure, humidity, seaLevel, grndLevel: Int?
 
     enum CodingKeys: String, CodingKey {
         case temp

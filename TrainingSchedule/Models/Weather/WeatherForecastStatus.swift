@@ -9,17 +9,17 @@ import Foundation
 
 // MARK: - WeatherForecastStatus
 struct WeatherForecastStatus: Codable {
-    let cod: String
-    let message, cnt: Int
-    let list: [List]
-    let city: City
+    let cod: String?
+    let message, cnt: Int?
+    let list: [List]?
+    let city: City?
 }
 
 // MARK: - List
 struct List: Codable {
-    let dateTime: Int
-    let main: MainClass
-    let weather: [Weather]
+    let dateTime: Int?
+    let main: MainClass?
+    let weather: [Weather]?
 
     enum CodingKeys: String, CodingKey {
         case main, weather
@@ -29,9 +29,9 @@ struct List: Codable {
 
 // MARK: - MainClass
 struct MainClass: Codable {
-    let temp, feelsLike, tempMin, tempMax: Double
-    let pressure, seaLevel, grndLevel, humidity: Int
-    let tempKf: Double
+    let temp, feelsLike, tempMin, tempMax: Double?
+    let pressure, seaLevel, grndLevel, humidity: Int?
+    let tempKf: Double?
 
     enum CodingKeys: String, CodingKey {
         case temp

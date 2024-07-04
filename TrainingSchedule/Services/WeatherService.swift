@@ -17,6 +17,7 @@ final class WeatherService {
     // MARK: Fetch API function
 
     func getCurrentWeather(lat: Double, long: Double, completion: @escaping(Result<WeatherStatus, Error>) -> Void) {
+        print(lat, long)
         let url = URL(string: "\(baseWeatherURL)/weather?lat=\(lat)&lon=\(long)&appid=\(self.apiKey)")!
 
         DispatchQueue.global().async {
