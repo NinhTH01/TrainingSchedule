@@ -36,11 +36,15 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
-        viewModel.setupLocationManager()
 
         mapPopupView.delegate = self
 
         setupBind()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        viewModel.setupLocationManager()
     }
 
     // MARK: - IBAction
@@ -97,7 +101,9 @@ extension MapViewController: MapViewModelDelegate, MapPopViewControllerDelegate 
         options.camera = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude,
                                                   longitude: location.coordinate.longitude,
                                                   zoom: 18.0)
+
         options.frame = self.mapView.bounds
+
         googleMapView = GMSMapView(options: options)
         mapView.addSubview(googleMapView)
 

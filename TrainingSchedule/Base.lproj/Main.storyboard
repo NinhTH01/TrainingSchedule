@@ -420,7 +420,7 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SNe-ic-UbH">
                                         <rect key="frame" x="0.0" y="0.0" width="430" height="709"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                     </view>
                                     <view alpha="0.10000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8NN-xt-xUR">
                                         <rect key="frame" x="0.0" y="709" width="430" height="1"/>
@@ -438,7 +438,6 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="70" id="F3u-Zq-Ggk"/>
                                                     <constraint firstAttribute="width" secondItem="Riq-dN-rVo" secondAttribute="height" multiplier="1:1" id="Ydf-f0-z5h"/>
-                                                    <constraint firstAttribute="width" constant="70" id="yca-av-DZd"/>
                                                 </constraints>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
@@ -456,7 +455,12 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.70368303570000001" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="SNe-ic-UbH" secondAttribute="trailing" id="BIB-55-rjS"/>
+                                    <constraint firstItem="8NN-xt-xUR" firstAttribute="top" secondItem="SNe-ic-UbH" secondAttribute="bottom" id="fIK-ri-bfd"/>
+                                    <constraint firstItem="SNe-ic-UbH" firstAttribute="leading" secondItem="5LD-0b-SFM" secondAttribute="leading" id="fYa-Ah-4lK"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="RWq-Kb-avd"/>
@@ -603,6 +607,9 @@
         </systemColor>
         <systemColor name="systemGray3Color">
             <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
