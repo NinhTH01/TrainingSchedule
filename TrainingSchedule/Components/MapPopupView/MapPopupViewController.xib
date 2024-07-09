@@ -11,10 +11,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MapPopupViewController" customModule="TrainingSchedule" customModuleProvider="target">
             <connections>
-                <outlet property="backView" destination="AEV-BU-KmI" id="onS-vB-Oh9"/>
+                <outlet property="blurBackgroundView" destination="AEV-BU-KmI" id="onS-vB-Oh9"/>
                 <outlet property="closeButton" destination="FoQ-zw-bTc" id="ljL-XF-PeL"/>
                 <outlet property="contentView" destination="hs9-QN-ad2" id="433-Tt-Omt"/>
-                <outlet property="imageView" destination="XPD-EF-oEw" id="Bjn-Jm-AOQ"/>
+                <outlet property="mapImageView" destination="XPD-EF-oEw" id="Bjn-Jm-AOQ"/>
                 <outlet property="titleLabel" destination="Ec2-9i-MES" id="ozv-Yi-D6r"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

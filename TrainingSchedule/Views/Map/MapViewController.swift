@@ -28,7 +28,7 @@ class MapViewController: UIViewController {
 
     private var mapPath: GMSMutablePath!
 
-    private var isUpdating: Bool = false
+    private var isRunning: Bool = false
 
     private var cancellables = Set<AnyCancellable>()
 
@@ -47,30 +47,7 @@ class MapViewController: UIViewController {
         viewModel.setupLocationManager()
     }
 
-    // MARK: - IBAction
-    @IBAction func buttonTapped(_ sender: UIButton) {
-        if isUpdating {
-            startButton.setTitle("Start", for: .normal)
-            capturePolyline()
-        } else {
-            let update = GMSCameraUpdate.zoom(to: 18.0)
-            googleMapView.animate(with: update)
-
-            if let polyline = mapPolyline {
-                polyline.map = nil
-                mapPolyline = nil
-            }
-
-            mapPath = GMSMutablePath()
-
-            startButton.setTitle("Stop", for: .normal)
-        }
-        isUpdating.toggle()
-    }
-}
-
-extension MapViewController: MapViewModelDelegate, MapPopViewControllerDelegate {
-    // MARK: - Functions
+    // MARK: - Bindings
     private func setupBind() {
         viewModel.$errorMessage
             .compactMap { $0 }
@@ -81,7 +58,31 @@ extension MapViewController: MapViewModelDelegate, MapPopViewControllerDelegate 
             .store(in: &cancellables)
     }
 
-    func drawPolyline(location: CLLocation, locations: [CLLocation]) {
+    // MARK: - IBAction
+    @IBAction private func startRunning(_ sender: UIButton) {
+        if isRunning {
+            startButton.setTitle("Start", for: .normal)
+            capturePolyline()
+        } else {
+            let cameraUpdate = GMSCameraUpdate.zoom(to: 18.0)
+            googleMapView.animate(with: cameraUpdate)
+
+            if let polyline = mapPolyline {
+                polyline.map = nil
+                mapPolyline = nil
+            }
+
+            mapPath = GMSMutablePath()
+
+            startButton.setTitle("Stop", for: .normal)
+        }
+        isRunning.toggle()
+    }
+}
+
+extension MapViewController: MapViewModelDelegate, MapPopViewControllerDelegate {
+    // MARK: - Functions
+    private func drawPolyline(location: CLLocation, locations: [CLLocation]) {
         guard let location = locations.last else { return }
 
         mapPath.add(location.coordinate)
@@ -96,35 +97,20 @@ extension MapViewController: MapViewModelDelegate, MapPopViewControllerDelegate 
         }
     }
 
-    func setupMap(location: CLLocation) {
-        let options = GMSMapViewOptions()
-        options.camera = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude,
-                                                  longitude: location.coordinate.longitude,
-                                                  zoom: 18.0)
-
-        options.frame = self.mapView.bounds
-
-        googleMapView = GMSMapView(options: options)
-        mapView.addSubview(googleMapView)
-
-        mapMarker.position = location.coordinate
-        mapMarker.map = googleMapView
-    }
-
-    func capturePolyline() {
-        let bounds = GMSCoordinateBounds(path: mapPath)
-        let update = GMSCameraUpdate.fit(bounds, withPadding: 50.0)
-        googleMapView.moveCamera(update)
-
+    private func capturePolyline() {
+        let cameraBounds = GMSCoordinateBounds(path: mapPath)
+        let cameraUpdate = GMSCameraUpdate.fit(cameraBounds, withPadding: 50.0)
+        googleMapView.moveCamera(cameraUpdate)
+        // Get delay to avoid capture before the camera update
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
             UIGraphicsBeginImageContextWithOptions(self.googleMapView.bounds.size, false, 0.0)
             self.googleMapView.layer.render(in: UIGraphicsGetCurrentContext()!)
-            let mapImage = UIGraphicsGetImageFromCurrentImageContext()
+            let polylineImage = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
 
             self.mapPopupView.popUpContent = PopUpContent(
                 distance: self.viewModel.calculateDistance(path: self.mapPath),
-                image: mapImage)
+                image: polylineImage)
             self.present(self.mapPopupView, animated: false) {
                 self.mapPopupView.show()
             }
@@ -140,6 +126,21 @@ extension MapViewController: MapViewModelDelegate, MapPopViewControllerDelegate 
         mapPath = nil
     }
 
+    func setupMap(location: CLLocation) {
+        let mapOptions = GMSMapViewOptions()
+        mapOptions.camera = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude,
+                                                  longitude: location.coordinate.longitude,
+                                                  zoom: 18.0)
+
+        mapOptions.frame = self.mapView.bounds
+
+        googleMapView = GMSMapView(options: mapOptions)
+        mapView.addSubview(googleMapView)
+
+        mapMarker.position = location.coordinate
+        mapMarker.map = googleMapView
+    }
+
     func didUpdateLocations(location: CLLocation, locations: [CLLocation]) {
         CATransaction.begin()
         mapMarker.position = location.coordinate
@@ -148,17 +149,8 @@ extension MapViewController: MapViewModelDelegate, MapPopViewControllerDelegate 
         let updatedCamera = GMSCameraUpdate.setTarget(location.coordinate)
         googleMapView.animate(with: updatedCamera)
 
-        if isUpdating {
+        if isRunning {
             drawPolyline(location: location, locations: locations)
         }
     }
-
-    func didChangeAuthorization() {
-
-    }
-
-    func didFailWithError(error: any Error) {
-
-    }
-
 }

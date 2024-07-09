@@ -9,8 +9,6 @@ import GoogleMaps
 // MARK: - Protocol
 protocol MapViewModelDelegate: AnyObject {
     func didUpdateLocations(location: CLLocation, locations: [CLLocation])
-    func didChangeAuthorization()
-    func didFailWithError(error: any Error)
     func setupMap(location: CLLocation)
 }
 
@@ -76,12 +74,10 @@ extension MapViewModel: CLLocationManagerDelegate {
         delegate?.didUpdateLocations(location: manager.location!, locations: locations)
     }
     func locationManager(_ manager: CLLocationManager, didFailWithError error: any Error) {
-        delegate?.didFailWithError(error: error)
     }
 
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         locationManager.startUpdatingLocation()
-        delegate?.didChangeAuthorization()
         delegate?.setupMap(location: locationManager.location!)
     }
 }

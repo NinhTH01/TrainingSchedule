@@ -17,7 +17,7 @@ protocol MapPopViewControllerDelegate: AnyObject {
 }
 
 class MapPopupViewController: UIViewController {
-    @IBOutlet weak var backView: UIView!
+    @IBOutlet weak var blurBackgroundView: UIView!
 
     @IBOutlet weak var contentView: UIView!
 
@@ -25,7 +25,7 @@ class MapPopupViewController: UIViewController {
 
     @IBOutlet weak var closeButton: UIButton!
 
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var mapImageView: UIImageView!
 
     var popUpContent = PopUpContent()
 
@@ -53,24 +53,24 @@ class MapPopupViewController: UIViewController {
 extension MapPopupViewController {
     private func commonSetup() {
         self.titleLabel.text = "Congratulations!! You have ran \(popUpContent.distance ?? "0.0") meters."
-        self.imageView.image = popUpContent.image ?? UIImage()
+        self.mapImageView.image = popUpContent.image ?? UIImage()
         self.view.backgroundColor = .clear
-        self.backView.backgroundColor = .black.withAlphaComponent(0.6)
-        self.backView.alpha = 0
+        self.blurBackgroundView.backgroundColor = .black.withAlphaComponent(0.6)
+        self.blurBackgroundView.alpha = 0
         self.contentView.alpha = 0
         self.contentView.layer.cornerRadius = 10.0
     }
 
     func show() {
         UIView.animate(withDuration: 1, delay: 0.2) {
-            self.backView.alpha = 1
+            self.blurBackgroundView.alpha = 1
             self.contentView.alpha = 1
         }
     }
 
     private func hide() {
         UIView.animate(withDuration: 1, delay: 0, options: .curveEaseOut) {
-            self.backView.alpha = 0
+            self.blurBackgroundView.alpha = 0
             self.contentView.alpha = 0
         } completion: { _ in
             self.dismiss(animated: false)

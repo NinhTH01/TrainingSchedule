@@ -20,14 +20,12 @@ final class WeatherService {
         print(lat, long)
         let url = URL(string: "\(baseWeatherURL)/weather?lat=\(lat)&lon=\(long)&appid=\(self.apiKey)")!
 
-        DispatchQueue.global().async {
-            URLSession.shared.fetchData(for: url) { (result: Result<WeatherStatus, Error>) in
-                switch result {
-                case .success(let weatherStatus):
-                    completion(.success(weatherStatus))
-                case .failure(let error):
-                    completion(.failure(error))
-                }
+        URLSession.shared.fetchData(for: url) { (result: Result<WeatherStatus, Error>) in
+            switch result {
+            case .success(let weatherStatus):
+                completion(.success(weatherStatus))
+            case .failure(let error):
+                completion(.failure(error))
             }
         }
     }
@@ -36,15 +34,13 @@ final class WeatherService {
                              completion: @escaping(Result<WeatherForecastStatus, Error>) -> Void) {
         let url = URL(string: "\(baseWeatherURL)/forecast?lat=\(lat)&lon=\(long)&appid=\(self.apiKey)")!
 
-        DispatchQueue.global().async {
-            URLSession.shared.fetchData(for: url) { (result: Result<WeatherForecastStatus, Error>) in
-                switch result {
-                case .success(let weatherForecaseStatus):
-                    completion(.success(weatherForecaseStatus))
-                case .failure(let error):
-                    print(error)
-                    completion(.failure(error))
-                }
+        URLSession.shared.fetchData(for: url) { (result: Result<WeatherForecastStatus, Error>) in
+            switch result {
+            case .success(let weatherForecaseStatus):
+                completion(.success(weatherForecaseStatus))
+            case .failure(let error):
+                print(error)
+                completion(.failure(error))
             }
         }
     }

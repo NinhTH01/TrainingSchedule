@@ -10,7 +10,6 @@ import Combine
 
 class WeatherViewController: UIViewController {
     // MARK: - IBOutlet
-
     @IBOutlet weak var backgroundImageView: UIImageView!
 
     @IBOutlet weak var headerView: WeatherHeaderView!
@@ -66,111 +65,31 @@ class WeatherViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupBind()
+
         let nib = UINib(nibName: "WeatherCollectionViewCell", bundle: .main)
-
         weatherCollectionView.register(nib, forCellWithReuseIdentifier: "cell")
-
         weatherCollectionView.delegate = self
-
         weatherCollectionView.dataSource = self
 
         scrollView.delegate = self
 
-        headerViewExpandHeight = view.frame.size.height * 0.30
-
-        descriptionFadedOffSetHeight = view.frame.size.height * 0.10
-
-        tempFadedOffSetHeight = view.frame.size.height * 0.20
-
         weatherViewModel.setupLocationManager()
 
-        setupBind()
-
+        // Setup Animation Attributes
+        headerViewExpandHeight = view.frame.size.height * 0.30
+        descriptionFadedOffSetHeight = view.frame.size.height * 0.10
+        tempFadedOffSetHeight = view.frame.size.height * 0.20
         headerViewHeightConstraint = headerView.heightAnchor.constraint(equalToConstant: headerViewExpandHeight)
-
         defaultInformationTopConstraint =
         detailInformationView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 0)
-
         NSLayoutConstraint.activate([
             headerViewHeightConstraint!,
             defaultInformationTopConstraint!
         ])
     }
 
-}
-
-extension WeatherViewController: UIScrollViewDelegate,
-                                    UICollectionViewDelegate,
-                                    UICollectionViewDataSource,
-                                    UICollectionViewDelegateFlowLayout {
-
-    // MARK: - CollectionView Delegate
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-
-        return currentWeatherForecastStatus?.list?.count ?? 0
-    }
-
-    func collectionView(_ collectionView: UICollectionView,
-                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
-        let cell = (collectionView.dequeueReusableCell(
-            withReuseIdentifier: "cell", for: indexPath) as? WeatherCollectionViewCell)!
-
-        cell.setup(currentWeatherForecastStatus?.list?[indexPath.row])
-
-        return cell
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: weatherCollectionView.frame.width / 7, height: weatherCollectionView.frame.height)
-    }
-
-    // MARK: - Functions
-
-    private func updateData(weatherStatus: WeatherStatus?) {
-        currentWeatherStatus = weatherStatus
-
-        forecastStackView.changeBackgroundColorByWeather(weather: weatherStatus?.weather?[0].main)
-
-        windStatusView.setup(
-            gust: weatherStatus?.wind?.gust?.meterSectoKilometHourString() ?? "0",
-            windDirection: String(weatherStatus?.wind?.deg ?? 0),
-            windSpeed: weatherStatus?.wind?.speed?.meterSectoKilometHourString() ?? "0",
-            weatherMain: weatherStatus?.weather?[0].main)
-
-        humidityView.setup(title: "HUMIDITY", value: "\(weatherStatus?.main?.humidity ?? 0)%",
-                           weatherMain: weatherStatus?.weather?[0].main)
-
-        feelsLikeView.setup(title: "FEELS LIKE",
-                            value: weatherStatus?.main?.feelsLike?.kelvinToCelsiusString() ?? "_",
-                            weatherMain: weatherStatus?.weather?[0].main)
-
-        sunsetView.setup(title: "SUNSET",
-                         value: weatherStatus?.sys?.sunset?.unixTimeToHourMinuteString() ?? "_",
-                         weatherMain: weatherStatus?.weather?[0].main)
-
-        sunriseView.setup(title: "SUNRISE",
-                          value: weatherStatus?.sys?.sunrise?.unixTimeToHourMinuteString() ?? "_",
-                          weatherMain: weatherStatus?.weather?[0].main)
-
-        pressureView.setup(title: "PRESSURE", value: "\(weatherStatus?.main?.pressure?.seperatorFormat() ?? "0")\nhPa",
-                           weatherMain: weatherStatus?.weather?[0].main)
-
-        visibilityView.setup(title: "VISIBILITY", value: "\((weatherStatus?.visibility ?? 0) / 1000)km",
-                             weatherMain: weatherStatus?.weather?[0].main)
-
-        headerView.setup(
-            temp: weatherStatus?.main?.temp?.kelvinToCelsiusString(),
-            city: weatherStatus?.name,
-            description: weatherStatus?.weather?[0].description?.capitalizedFirstLetterOfEachWord(),
-            highestTemp: weatherStatus?.main?.tempMax?.kelvinToCelsiusString(),
-            lowestTemp: weatherStatus?.main?.tempMin?.kelvinToCelsiusString())
-
-        backgroundImageView.changeBackgroundByWeather(weather: weatherStatus?.weather?[0].main)
-    }
-
-    // MARK: - Sink datas
+    // MARK: - Binding
     private func setupBind() {
         weatherViewModel.$errorMessage
             .compactMap { $0 }
@@ -196,7 +115,136 @@ extension WeatherViewController: UIScrollViewDelegate,
             .store(in: &cancellables)
     }
 
-    // MARK: - ScrollView Delegate
+}
+
+extension WeatherViewController {
+    // MARK: - Functions
+    private func unixTimeToHourMinuteString(unixTime: Int?) -> String {
+        guard unixTime != nil else {
+            return "_"
+        }
+
+        let date = Date(timeIntervalSince1970: Double(unixTime!))
+
+        let dateFormatter = DateFormatter()
+
+        dateFormatter.dateFormat = "HH:mm"
+
+        return dateFormatter.string(from: date)
+    }
+
+    private func getTwoDigitsSeperator(number: Int?) -> String {
+        guard number != nil else {
+            return "_"
+        }
+
+        let numberFormatter = NumberFormatter()
+
+        numberFormatter.numberStyle = .decimal
+
+        numberFormatter.maximumFractionDigits = 2
+
+        if let formattedValue = numberFormatter.string(from: NSNumber(value: number!)) {
+            return formattedValue
+        } else {
+            return String(number!)
+        }
+    }
+
+    private func meterSectoKilometHourString(meterSec: Double?) -> String {
+        guard meterSec != nil else {
+            return "_"
+        }
+        let speedInKilometInHour = meterSec! * 3.6
+        return String(format: "%.f", speedInKilometInHour)
+    }
+
+    private func changeBackgroundByWeather(weather: WeatherMain?) {
+        switch weather {
+        case .cloud:
+            backgroundImageView.image = UIImage(named: "CloudBackground")
+        case .rain:
+            backgroundImageView.image  = UIImage(named: "RainBackground")
+        case .clear:
+            backgroundImageView.image  = UIImage(named: "DefaultBackground")
+        case .drizzle:
+            backgroundImageView.image  = UIImage(named: "DrizzleBackground")
+        case .thunderstorm:
+            backgroundImageView.image = UIImage(named: "ThunderStormBackground")
+        default:
+            backgroundImageView.image = UIImage(named: "DefaultBackground")
+        }
+    }
+
+    private func updateData(weatherStatus: WeatherStatus?) {
+        currentWeatherStatus = weatherStatus
+
+        forecastStackView.changeBackgroundColorByWeather(weather: weatherStatus?.weather?[0].main)
+
+        windStatusView.setup(
+            gust: meterSectoKilometHourString(meterSec: weatherStatus?.wind?.gust),
+            windDirection: String(weatherStatus?.wind?.deg ?? 0),
+            windSpeed: meterSectoKilometHourString(meterSec: weatherStatus?.wind?.speed),
+            weatherMain: weatherStatus?.weather?[0].main)
+
+        humidityView.setup(title: "HUMIDITY", value: "\(weatherStatus?.main?.humidity ?? 0)%",
+                           weatherMain: weatherStatus?.weather?[0].main)
+
+        feelsLikeView.setup(title: "FEELS LIKE",
+                            value: weatherStatus?.main?.feelsLike?.kelvinToCelsiusString() ?? "_",
+                            weatherMain: weatherStatus?.weather?[0].main)
+
+        sunsetView.setup(title: "SUNSET",
+                         value: unixTimeToHourMinuteString(unixTime: weatherStatus?.sys?.sunset),
+                         weatherMain: weatherStatus?.weather?[0].main)
+
+        sunriseView.setup(title: "SUNRISE",
+                          value: unixTimeToHourMinuteString(unixTime: weatherStatus?.sys?.sunrise),
+                          weatherMain: weatherStatus?.weather?[0].main)
+
+        pressureView.setup(title: "PRESSURE", value: "\(getTwoDigitsSeperator(number: weatherStatus?.main?.pressure))\nhPa",
+                           weatherMain: weatherStatus?.weather?[0].main)
+
+        visibilityView.setup(title: "VISIBILITY", value: "\((weatherStatus?.visibility ?? 0) / 1000)km",
+                             weatherMain: weatherStatus?.weather?[0].main)
+
+        headerView.setup(
+            temp: weatherStatus?.main?.temp?.kelvinToCelsiusString(),
+            city: weatherStatus?.name,
+            description: weatherStatus?.weather?[0].description?.capitalizedFirstLetterOfEachWord(),
+            highestTemp: weatherStatus?.main?.tempMax?.kelvinToCelsiusString(),
+            lowestTemp: weatherStatus?.main?.tempMin?.kelvinToCelsiusString())
+
+        changeBackgroundByWeather(weather: weatherStatus?.weather?[0].main)
+    }
+}
+// MARK: - CollectionView Delegate
+extension WeatherViewController: UICollectionViewDelegate, UICollectionViewDataSource,
+                                 UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+
+        return currentWeatherForecastStatus?.list?.count ?? 0
+    }
+
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
+        let cell = (collectionView.dequeueReusableCell(
+            withReuseIdentifier: "cell", for: indexPath) as? WeatherCollectionViewCell)!
+
+        cell.setup(currentWeatherForecastStatus?.list?[indexPath.row])
+
+        return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: weatherCollectionView.frame.width / 7, height: weatherCollectionView.frame.height)
+    }
+}
+
+// MARK: - ScrollView Delegate
+extension WeatherViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let currentOffSetY = scrollView.contentOffset.y
 

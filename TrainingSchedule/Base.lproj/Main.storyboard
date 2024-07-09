@@ -88,7 +88,7 @@
                                 </cells>
                             </collectionView>
                             <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="yGM-e8-c9a">
-                                <rect key="frame" x="157.33333333333337" y="786.33333333333337" width="115.66666666666663" height="25.666666666666629"/>
+                                <rect key="frame" x="157.33333333333334" y="786.33333333333337" width="115.66666666666666" height="25.666666666666629"/>
                                 <color key="pageIndicatorTintColor" systemColor="systemGray3Color"/>
                                 <color key="currentPageIndicatorTintColor" red="0.0" green="0.0" blue="0.0" alpha="0.7036830357142857" colorSpace="custom" customColorSpace="displayP3"/>
                             </pageControl>
@@ -420,7 +420,7 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SNe-ic-UbH">
                                         <rect key="frame" x="0.0" y="0.0" width="430" height="709"/>
-                                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <view alpha="0.10000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8NN-xt-xUR">
                                         <rect key="frame" x="0.0" y="709" width="430" height="1"/>
@@ -482,22 +482,6 @@
             </objects>
             <point key="canvasLocation" x="1456.7441860465117" y="951.50214592274688"/>
         </scene>
-        <!--Schedule-->
-        <scene sceneID="GOe-db-yOs">
-            <objects>
-                <viewController id="30m-uw-40c" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="U27-dS-6qU">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="nMv-cn-llZ"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Schedule" image="calendar.circle" catalog="system" selectedImage="calendar.circle.fill" id="mud-FM-goF"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3me-mI-NNU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2372" y="952"/>
-        </scene>
         <!--Tabbar View Controller-->
         <scene sceneID="oIc-aq-JgM">
             <objects>
@@ -520,72 +504,47 @@
                     <connections>
                         <segue destination="OMZ-YC-3vh" kind="relationship" relationship="viewControllers" id="0b6-7a-DcX"/>
                         <segue destination="GFk-Vb-Ub1" kind="relationship" relationship="viewControllers" id="lCz-BZ-A4Y"/>
-                        <segue destination="30m-uw-40c" kind="relationship" relationship="viewControllers" id="b16-rj-lRh"/>
+                        <segue destination="2KP-4G-bX5" kind="relationship" relationship="viewControllers" id="b16-rj-lRh"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Twz-Un-WvH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <view contentMode="scaleToFill" id="Zoa-et-FN1">
-                    <rect key="frame" x="0.0" y="0.0" width="430" height="250"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hanoi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="14L-cQ-oK9">
-                            <rect key="frame" x="170" y="0.0" width="90.333333333333314" height="43"/>
-                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="35"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <color key="highlightedColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <color key="shadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="31" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="era-Xn-YmF">
-                            <rect key="frame" x="173.33333333333334" y="43" width="83.666666666666657" height="93"/>
-                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="77"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <nil key="highlightedColor"/>
-                            <color key="shadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </label>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="FdK-LJ-hVs">
-                            <rect key="frame" x="150" y="163.33333333333334" width="130" height="20"/>
-                            <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="H: 33" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZX-6r-d7a">
-                                    <rect key="frame" x="0.0" y="0.0" width="53.333333333333336" height="20"/>
-                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="highlightedColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="L: 26" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LMg-yB-VIj">
-                                    <rect key="frame" x="80.666666666666657" y="0.0" width="49.333333333333343" height="20"/>
-                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="highlightedColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </label>
-                            </subviews>
-                            <constraints>
-                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="130" id="Sqj-pI-Oso"/>
-                                <constraint firstAttribute="height" constant="20" id="vGO-y4-cRS"/>
-                            </constraints>
-                        </stackView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mostly Cloudy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUM-b3-Xoz">
-                            <rect key="frame" x="145" y="136" width="140.33333333333337" height="27.333333333333343"/>
-                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <nil key="highlightedColor"/>
-                            <color key="shadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </label>
-                    </subviews>
-                    <viewLayoutGuide key="safeArea" id="AJo-wn-SLc"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstItem="era-Xn-YmF" firstAttribute="centerX" secondItem="Zoa-et-FN1" secondAttribute="centerX" id="FOh-Ka-Xyg"/>
-                        <constraint firstItem="14L-cQ-oK9" firstAttribute="centerX" secondItem="Zoa-et-FN1" secondAttribute="centerX" id="Pdi-9h-Zot"/>
-                        <constraint firstItem="14L-cQ-oK9" firstAttribute="top" secondItem="Zoa-et-FN1" secondAttribute="top" id="Qa3-5U-mQc"/>
-                        <constraint firstItem="UUM-b3-Xoz" firstAttribute="centerX" secondItem="Zoa-et-FN1" secondAttribute="centerX" id="REL-Df-zsu"/>
-                        <constraint firstItem="UUM-b3-Xoz" firstAttribute="top" secondItem="era-Xn-YmF" secondAttribute="bottom" id="Swr-Y4-WEX"/>
-                        <constraint firstItem="FdK-LJ-hVs" firstAttribute="centerX" secondItem="Zoa-et-FN1" secondAttribute="centerX" id="c0A-Mk-pQE"/>
-                        <constraint firstItem="era-Xn-YmF" firstAttribute="top" secondItem="14L-cQ-oK9" secondAttribute="bottom" id="iei-Ol-pMK"/>
-                        <constraint firstItem="FdK-LJ-hVs" firstAttribute="top" secondItem="UUM-b3-Xoz" secondAttribute="bottom" id="tX1-8m-arm"/>
-                    </constraints>
-                </view>
             </objects>
             <point key="canvasLocation" x="1457" y="-35"/>
+        </scene>
+        <!--Schedule-->
+        <scene sceneID="eDb-BM-SG7">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2KP-4G-bX5" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Schedule" image="calendar.circle" catalog="system" selectedImage="calendar.circle.fill" id="mud-FM-goF"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JWW-Zn-L6d">
+                        <rect key="frame" x="0.0" y="59" width="430" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="30m-uw-40c" kind="relationship" relationship="rootViewController" id="foP-bG-3N7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0om-mf-Xgz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2370.6976744186045" y="951.50214592274688"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="GOe-db-yOs">
+            <objects>
+                <viewController id="30m-uw-40c" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="U27-dS-6qU">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="nMv-cn-llZ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="TTE-Er-2vt"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3me-mI-NNU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3266.5116279069766" y="951.50214592274688"/>
         </scene>
     </scenes>
     <resources>
@@ -600,16 +559,13 @@
             <color red="0.55699998140335083" green="0.55699998140335083" blue="0.57599997520446777" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray3Color">
-            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemIndigoColor">
-            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
