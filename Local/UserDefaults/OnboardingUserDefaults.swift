@@ -1,13 +1,13 @@
 //
-//  UserDefaults+Extension.swift
+//  OnboardingUserDefaults.swift
 //  TrainingSchedule
 //
-//  Created by Trần Hải Ninh on 26/6/24.
+//  Created by Trần Hải Ninh on 9/7/24.
 //
 
 import Foundation
 
-extension UserDefaults {
+class OnboardingUserDefaults: UserDefaults {
     private enum UserDefaultsKeys: String {
         case hasOnboarded
     }
