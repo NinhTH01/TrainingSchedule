@@ -6,21 +6,18 @@
 //
 import CoreLocation
 import GoogleMaps
-// MARK: - Protocol
-protocol MapViewModelDelegate: AnyObject {
-    func didUpdateLocations(location: CLLocation, locations: [CLLocation])
-    func setupMap(location: CLLocation)
-}
 
 class MapViewModel: NSObject {
     // MARK: - Consts and variables
     let locationManager = CLLocationManager()
 
-    let context = (UIApplication.shared.delegate as? AppDelegate)!.persistentContainer.viewContext
-
-    weak var delegate: MapViewModelDelegate?
+    private let context = (UIApplication.shared.delegate as? AppDelegate)!.persistentContainer.viewContext
 
     @Published var errorMessage: String?
+
+    @Published var location: CLLocation?
+
+    @Published var locationAuthorization: CLAuthorizationStatus?
 
     // MARK: - Functions
     func setupLocationManager() {
@@ -29,7 +26,7 @@ class MapViewModel: NSObject {
         if locationManager.authorizationStatus == .authorizedAlways
             || locationManager.authorizationStatus == .authorizedWhenInUse {
             locationManager.startUpdatingLocation()
-            delegate?.setupMap(location: locationManager.location!)
+            locationAuthorization = locationManager.authorizationStatus
         } else {
             locationManager.requestAlwaysAuthorization()
         }
@@ -70,14 +67,14 @@ extension MapViewModel: CLLocationManagerDelegate {
     // MARK: - Location Delegate
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard manager.location != nil else {return}
-
-        delegate?.didUpdateLocations(location: manager.location!, locations: locations)
+        location = manager.location
     }
     func locationManager(_ manager: CLLocationManager, didFailWithError error: any Error) {
+        self.errorMessage = error.localizedDescription
     }
 
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         locationManager.startUpdatingLocation()
-        delegate?.setupMap(location: locationManager.location!)
+        locationAuthorization = manager.authorizationStatus
     }
 }

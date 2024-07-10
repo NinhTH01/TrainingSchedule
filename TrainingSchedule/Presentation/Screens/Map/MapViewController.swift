@@ -35,8 +35,6 @@ class MapViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.delegate = self
-
         mapPopupView.delegate = self
 
         setupBind()
@@ -56,10 +54,27 @@ class MapViewController: UIViewController {
                 self?.showErrorAlert(message: errorMessage)
             }
             .store(in: &cancellables)
+
+        viewModel.$location
+            .compactMap { $0 }
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] location in
+                self?.didUpdateLocations(location: location)
+            }
+            .store(in: &cancellables)
+
+        viewModel.$locationAuthorization
+            .compactMap { $0 }
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in
+                let location = self?.viewModel.location
+                self?.setupMap(location: location ?? CLLocation())
+            }
+            .store(in: &cancellables)
     }
 
     // MARK: - IBAction
-    @IBAction private func startRunning(_ sender: UIButton) {
+    @IBAction private func startRunning() {
         if isRunning {
             startButton.setTitle("Start", for: .normal)
             capturePolyline()
@@ -80,11 +95,9 @@ class MapViewController: UIViewController {
     }
 }
 
-extension MapViewController: MapViewModelDelegate, MapPopViewControllerDelegate {
+extension MapViewController: MapPopViewControllerDelegate {
     // MARK: - Functions
-    private func drawPolyline(location: CLLocation, locations: [CLLocation]) {
-        guard let location = locations.last else { return }
-
+    private func drawPolyline(location: CLLocation) {
         mapPath.add(location.coordinate)
 
         if mapPolyline == nil {
@@ -117,15 +130,6 @@ extension MapViewController: MapViewModelDelegate, MapPopViewControllerDelegate 
         }
     }
 
-    // MARK: - Delegate Function
-    func isHide() {
-        if let polyline = mapPolyline {
-            polyline.map = nil
-            mapPolyline = nil
-        }
-        mapPath = nil
-    }
-
     func setupMap(location: CLLocation) {
         let mapOptions = GMSMapViewOptions()
         mapOptions.camera = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude,
@@ -141,7 +145,7 @@ extension MapViewController: MapViewModelDelegate, MapPopViewControllerDelegate 
         mapMarker.map = googleMapView
     }
 
-    func didUpdateLocations(location: CLLocation, locations: [CLLocation]) {
+    func didUpdateLocations(location: CLLocation) {
         CATransaction.begin()
         mapMarker.position = location.coordinate
         CATransaction.commit()
@@ -150,7 +154,16 @@ extension MapViewController: MapViewModelDelegate, MapPopViewControllerDelegate 
         googleMapView.animate(with: updatedCamera)
 
         if isRunning {
-            drawPolyline(location: location, locations: locations)
+            drawPolyline(location: location)
         }
+    }
+
+    // MARK: - Delegate Function
+    func isHide() {
+        if let polyline = mapPolyline {
+            polyline.map = nil
+            mapPolyline = nil
+        }
+        mapPath = nil
     }
 }

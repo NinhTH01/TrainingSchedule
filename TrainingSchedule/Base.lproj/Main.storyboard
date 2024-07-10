@@ -443,7 +443,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Start"/>
                                                 <connections>
-                                                    <action selector="buttonTapped:" destination="GFk-Vb-Ub1" eventType="touchUpInside" id="fJN-Di-JYc"/>
+                                                    <action selector="startRunning" destination="GFk-Vb-Ub1" eventType="touchUpInside" id="fMY-cY-aDo"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -475,7 +475,7 @@
                     <tabBarItem key="tabBarItem" title="Map" image="map" catalog="system" selectedImage="map.fill" id="11q-4A-iPq"/>
                     <connections>
                         <outlet property="mapView" destination="SNe-ic-UbH" id="Pkc-dU-IMa"/>
-                        <outlet property="startButton" destination="Riq-dN-rVo" id="7h6-7s-PIO"/>
+                        <outlet property="startButton" destination="Riq-dN-rVo" id="shX-Bf-GRj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JUs-eI-xNc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
