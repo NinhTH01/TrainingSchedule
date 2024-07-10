@@ -8,14 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		490DFE2E2C3D0ED30043AB05 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490DFE2D2C3D0ED30043AB05 /* CalendarViewController.swift */; };
-		490DFE342C3D11AD0043AB05 /* CalendarHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490DFE332C3D11AD0043AB05 /* CalendarHelper.swift */; };
+		490DFE342C3D11AD0043AB05 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490DFE332C3D11AD0043AB05 /* CalendarViewModel.swift */; };
 		490DFE3B2C3D337D0043AB05 /* OnboardingUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490DFE3A2C3D337D0043AB05 /* OnboardingUserDefaults.swift */; };
+		490DFE492C3E2EF00043AB05 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490DFE482C3E2EF00043AB05 /* CalendarCell.swift */; };
+		490DFE4D2C3E600B0043AB05 /* CalendarDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490DFE4C2C3E600B0043AB05 /* CalendarDate.swift */; };
+		490DFE512C3E6A620043AB05 /* CalendarDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490DFE502C3E6A620043AB05 /* CalendarDetailViewController.swift */; };
+		490DFE542C3E6B0B0043AB05 /* CalendarDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490DFE532C3E6B0B0043AB05 /* CalendarDetailCell.swift */; };
+		490DFE562C3E6E210043AB05 /* CalendarDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490DFE552C3E6E210043AB05 /* CalendarDetailViewModel.swift */; };
 		493EFC472C339BF7007A4A0F /* WeatherStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493EFC462C339BF7007A4A0F /* WeatherStatusView.swift */; };
 		493EFC4A2C339C05007A4A0F /* WeatherStatusView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 493EFC492C339C05007A4A0F /* WeatherStatusView.xib */; };
 		493EFC4C2C33AB65007A4A0F /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493EFC4B2C33AB65007A4A0F /* UIView+Extension.swift */; };
 		493EFC522C33D367007A4A0F /* WeatherHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493EFC512C33D367007A4A0F /* WeatherHeaderView.swift */; };
 		493EFC562C33D428007A4A0F /* WeatherHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 493EFC552C33D428007A4A0F /* WeatherHeaderView.xib */; };
-		493EFC7D2C35388F007A4A0F /* TrainingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493EFC7C2C35388F007A4A0F /* TrainingData.swift */; };
 		493EFC7F2C3538CC007A4A0F /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493EFC7E2C3538CC007A4A0F /* MapViewModel.swift */; };
 		493EFC822C3539F9007A4A0F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493EFC812C3539F9007A4A0F /* MapViewController.swift */; };
 		493EFC872C355540007A4A0F /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493EFC862C355540007A4A0F /* RoundButton.swift */; };
@@ -56,14 +60,18 @@
 /* Begin PBXFileReference section */
 		446307F252543FBB558E229F /* Pods-TrainingSchedule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrainingSchedule.debug.xcconfig"; path = "Target Support Files/Pods-TrainingSchedule/Pods-TrainingSchedule.debug.xcconfig"; sourceTree = "<group>"; };
 		490DFE2D2C3D0ED30043AB05 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
-		490DFE332C3D11AD0043AB05 /* CalendarHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHelper.swift; sourceTree = "<group>"; };
+		490DFE332C3D11AD0043AB05 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		490DFE3A2C3D337D0043AB05 /* OnboardingUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingUserDefaults.swift; sourceTree = "<group>"; };
+		490DFE482C3E2EF00043AB05 /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
+		490DFE4C2C3E600B0043AB05 /* CalendarDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDate.swift; sourceTree = "<group>"; };
+		490DFE502C3E6A620043AB05 /* CalendarDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDetailViewController.swift; sourceTree = "<group>"; };
+		490DFE532C3E6B0B0043AB05 /* CalendarDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDetailCell.swift; sourceTree = "<group>"; };
+		490DFE552C3E6E210043AB05 /* CalendarDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDetailViewModel.swift; sourceTree = "<group>"; };
 		493EFC462C339BF7007A4A0F /* WeatherStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherStatusView.swift; sourceTree = "<group>"; };
 		493EFC492C339C05007A4A0F /* WeatherStatusView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherStatusView.xib; sourceTree = "<group>"; };
 		493EFC4B2C33AB65007A4A0F /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		493EFC512C33D367007A4A0F /* WeatherHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherHeaderView.swift; sourceTree = "<group>"; };
 		493EFC552C33D428007A4A0F /* WeatherHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherHeaderView.xib; sourceTree = "<group>"; };
-		493EFC7C2C35388F007A4A0F /* TrainingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingData.swift; sourceTree = "<group>"; };
 		493EFC7E2C3538CC007A4A0F /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		493EFC812C3539F9007A4A0F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		493EFC862C355540007A4A0F /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
@@ -264,9 +272,54 @@
 		490DFE462C3D48020043AB05 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
+				490DFE4F2C3E68AA0043AB05 /* CalendarDetail */,
+				490DFE4E2C3E689C0043AB05 /* Calendar */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		490DFE472C3E2EDE0043AB05 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				490DFE482C3E2EF00043AB05 /* CalendarCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		490DFE4A2C3E5FF50043AB05 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				490DFE4C2C3E600B0043AB05 /* CalendarDate.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		490DFE4E2C3E689C0043AB05 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				490DFE472C3E2EDE0043AB05 /* Views */,
+				490DFE332C3D11AD0043AB05 /* CalendarViewModel.swift */,
 				490DFE2D2C3D0ED30043AB05 /* CalendarViewController.swift */,
 			);
 			path = Calendar;
+			sourceTree = "<group>";
+		};
+		490DFE4F2C3E68AA0043AB05 /* CalendarDetail */ = {
+			isa = PBXGroup;
+			children = (
+				490DFE522C3E6AFE0043AB05 /* Views */,
+				490DFE502C3E6A620043AB05 /* CalendarDetailViewController.swift */,
+				490DFE552C3E6E210043AB05 /* CalendarDetailViewModel.swift */,
+			);
+			path = CalendarDetail;
+			sourceTree = "<group>";
+		};
+		490DFE522C3E6AFE0043AB05 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				490DFE532C3E6B0B0043AB05 /* CalendarDetailCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		493EFC452C339BE0007A4A0F /* WeatherStatusView */ = {
@@ -293,14 +346,6 @@
 				496DA6D02C2BB7B500147617 /* OnboardingSlide.swift */,
 			);
 			path = Onboarding;
-			sourceTree = "<group>";
-		};
-		493EFC7B2C353866007A4A0F /* Map */ = {
-			isa = PBXGroup;
-			children = (
-				493EFC7C2C35388F007A4A0F /* TrainingData.swift */,
-			);
-			path = Map;
 			sourceTree = "<group>";
 		};
 		493EFC832C35551F007A4A0F /* RoundButton */ = {
@@ -368,7 +413,7 @@
 		496DA6CB2C2BB2FB00147617 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				493EFC7B2C353866007A4A0F /* Map */,
+				490DFE4A2C3E5FF50043AB05 /* Calendar */,
 				493EFC7A2C35385C007A4A0F /* Onboarding */,
 				49CCED8E2C2E640A00F1B513 /* Weather */,
 			);
@@ -426,7 +471,6 @@
 				49DD4CBD2C2EA16B0000F0B2 /* String.swift */,
 				49DD4CBF2C2EA2190000F0B2 /* Double.swift */,
 				493EFC882C363553007A4A0F /* Data.swift */,
-				490DFE332C3D11AD0043AB05 /* CalendarHelper.swift */,
 				49463A732C2BFEA200B40AC9 /* UIViewController+Extension.swift */,
 				49CCED882C2E5CEF00F1B513 /* URLSession+Extension.swift */,
 				493EFC4B2C33AB65007A4A0F /* UIView+Extension.swift */,
@@ -591,7 +635,7 @@
 				49CCED8B2C2E62CA00F1B513 /* WeatherForecastStatus.swift in Sources */,
 				49463A712C2BFCCE00B40AC9 /* TabbarViewController.swift in Sources */,
 				4986AEB22C32930300581465 /* WeatherWindView.swift in Sources */,
-				490DFE342C3D11AD0043AB05 /* CalendarHelper.swift in Sources */,
+				490DFE342C3D11AD0043AB05 /* CalendarViewModel.swift in Sources */,
 				493EFC522C33D367007A4A0F /* WeatherHeaderView.swift in Sources */,
 				496DA6AF2C2BA9ED00147617 /* AppDelegate.swift in Sources */,
 				49600AE52C32537F00DDC4F1 /* WeatherCollectionViewCell.swift in Sources */,
@@ -604,19 +648,23 @@
 				493EFC4C2C33AB65007A4A0F /* UIView+Extension.swift in Sources */,
 				496DA6DA2C2BE6F500147617 /* OnboardingData.swift in Sources */,
 				493EFC7F2C3538CC007A4A0F /* MapViewModel.swift in Sources */,
+				490DFE562C3E6E210043AB05 /* CalendarDetailViewModel.swift in Sources */,
 				490DFE3B2C3D337D0043AB05 /* OnboardingUserDefaults.swift in Sources */,
 				496DA6D12C2BB7B500147617 /* OnboardingSlide.swift in Sources */,
+				490DFE512C3E6A620043AB05 /* CalendarDetailViewController.swift in Sources */,
 				4986AEAF2C3290D600581465 /* RoundCornerStackView.swift in Sources */,
 				493EFCAB2C364D3A007A4A0F /* MapPopupViewController.swift in Sources */,
 				490DFE2E2C3D0ED30043AB05 /* CalendarViewController.swift in Sources */,
-				493EFC7D2C35388F007A4A0F /* TrainingData.swift in Sources */,
 				496DA6D32C2BBA9300147617 /* OnboardingCollectionViewCell.swift in Sources */,
+				490DFE4D2C3E600B0043AB05 /* CalendarDate.swift in Sources */,
 				49DD4CBE2C2EA16B0000F0B2 /* String.swift in Sources */,
 				49CCED892C2E5CEF00F1B513 /* URLSession+Extension.swift in Sources */,
 				49CCED622C2D100C00F1B513 /* WeatherStatus.swift in Sources */,
+				490DFE492C3E2EF00043AB05 /* CalendarCell.swift in Sources */,
 				496DA6B12C2BA9ED00147617 /* SceneDelegate.swift in Sources */,
 				49463A792C2C037E00B40AC9 /* WeatherViewController.swift in Sources */,
 				493EFC892C363553007A4A0F /* Data.swift in Sources */,
+				490DFE542C3E6B0B0043AB05 /* CalendarDetailCell.swift in Sources */,
 				499652352C36860300A8CA4A /* RunningHistory+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
