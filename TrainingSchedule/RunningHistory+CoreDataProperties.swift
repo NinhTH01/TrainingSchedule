@@ -15,7 +15,9 @@ extension RunningHistory {
         return NSFetchRequest<RunningHistory>(entityName: "RunningHistory")
     }
 
+    @NSManaged public var id: String
     @NSManaged public var distance: Double
-    @NSManaged public var createdAt: Date?
+    @NSManaged public var date: Date
+    @NSManaged public var desc: String?
 
 }

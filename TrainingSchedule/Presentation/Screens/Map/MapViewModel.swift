@@ -49,7 +49,9 @@ class MapViewModel: NSObject {
     func addDistanceToDatabase(distance: Double) {
         let runningHistory = RunningHistory(context: context)
         runningHistory.distance = distance
-        runningHistory.createdAt = Date()
+        runningHistory.desc = "You have run \(getTwoDigitsSeperator(number: distance)) meters."
+        runningHistory.date = Date()
+        runningHistory.id = UUID().uuidString
         DispatchQueue.global().async {
             do {
                 try self.context.save()
@@ -59,7 +61,24 @@ class MapViewModel: NSObject {
                 }
             }
         }
+    }
 
+    private func getTwoDigitsSeperator(number: Double?) -> String {
+        guard number != nil else {
+            return "_"
+        }
+
+        let numberFormatter = NumberFormatter()
+
+        numberFormatter.numberStyle = .decimal
+
+        numberFormatter.maximumFractionDigits = 2
+
+        if let formattedValue = numberFormatter.string(from: NSNumber(value: number!)) {
+            return formattedValue
+        } else {
+            return String(number!)
+        }
     }
 }
 

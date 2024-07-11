@@ -134,6 +134,9 @@ extension CalendarViewController {
         let rightButton = UIBarButtonItem(title: CalendarViewModel().getNextMonthToString(date: refDate),
                                           style: .plain, target: self, action: #selector(changeToNextMonth))
         navigationItem.rightBarButtonItem = rightButton
+
+        let swipeGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handleSwipeGesture(_:)))
+        view.addGestureRecognizer(swipeGestureRecognizer)
     }
 
     private func updateCalendar() {
@@ -166,4 +169,18 @@ extension CalendarViewController {
     @objc private func changeToLastMonth() {
         updateRefDateToLastMonth()
     }
+
+    @objc private func handleSwipeGesture(_ gesture: UIPanGestureRecognizer) {
+           let translation = gesture.translation(in: view)
+           switch gesture.state {
+           case .ended:
+               if translation.x > 50 {
+                   updateRefDateToLastMonth()
+               } else if translation.x < -50 {
+                   updateRefDateToNextMonth()
+               }
+           default:
+               break
+           }
+       }
 }

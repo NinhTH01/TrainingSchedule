@@ -32,7 +32,7 @@ extension CalendarViewModel {
 
         for date in dates {
             var isEvent = false
-            for item in items where isSameDay(date1: date, date2: item.createdAt!) {
+            for item in items where isSameDay(date1: date, date2: item.date) {
                     isEvent = true
                     break
             }

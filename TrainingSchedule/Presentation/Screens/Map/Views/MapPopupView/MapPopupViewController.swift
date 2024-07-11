@@ -52,7 +52,7 @@ class MapPopupViewController: UIViewController {
 
 extension MapPopupViewController {
     private func commonSetup() {
-        self.titleLabel.text = "Congratulations!! You have ran \(popUpContent.distance ?? "0.0") meters."
+        self.titleLabel.text = "Congratulations!! You have run \(popUpContent.distance ?? "0.0") meters."
         self.mapImageView.image = popUpContent.image ?? UIImage()
         self.view.backgroundColor = .clear
         self.blurBackgroundView.backgroundColor = .black.withAlphaComponent(0.6)

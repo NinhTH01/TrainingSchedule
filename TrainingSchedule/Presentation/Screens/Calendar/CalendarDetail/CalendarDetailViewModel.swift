@@ -24,7 +24,7 @@ extension CalendarDetailViewModel {
         components.second = -1
         let endOfDay = Calendar.current.date(byAdding: components, to: startOfDay)
 
-        let predicate = NSPredicate(format: "createdAt >= %@ AND createdAt <= %@",
+        let predicate = NSPredicate(format: "date >= %@ AND date <= %@",
                                     startOfDay as NSDate, endOfDay! as NSDate)
         let fetchRequest = RunningHistory.fetchRequest()
         fetchRequest.predicate = predicate
