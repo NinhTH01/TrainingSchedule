@@ -6,7 +6,7 @@
 //
 import Foundation
 
-final class WeatherService {
+class WeatherService {
 
     // MARK: Const
 

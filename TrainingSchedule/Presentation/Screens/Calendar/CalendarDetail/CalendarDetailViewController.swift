@@ -78,7 +78,7 @@ extension CalendarDetailViewController {
         self.navigationController?.pushViewController(controller, animated: true)
     }
 
-    func sortItemsByDate() {
+    private func sortItemsByDate() {
         eventList?.sort { $0.date < $1.date }
         collectionView.reloadData()
     }
