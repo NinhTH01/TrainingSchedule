@@ -17,6 +17,10 @@
 		490DFE562C3E6E210043AB05 /* CalendarDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490DFE552C3E6E210043AB05 /* CalendarDetailViewModel.swift */; };
 		490DFE592C3F73430043AB05 /* CalendarEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490DFE582C3F73430043AB05 /* CalendarEditViewController.swift */; };
 		490DFE5B2C3F7BBA0043AB05 /* CalendarEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490DFE5A2C3F7BBA0043AB05 /* CalendarEditViewModel.swift */; };
+		490DFE5E2C40D0680043AB05 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490DFE5D2C40D0680043AB05 /* Router.swift */; };
+		490DFE602C40D1BC0043AB05 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490DFE5F2C40D1BC0043AB05 /* Service.swift */; };
+		490DFE632C40D3250043AB05 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490DFE622C40D3250043AB05 /* BaseService.swift */; };
+		490DFE652C40D3AF0043AB05 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490DFE642C40D3AF0043AB05 /* Repository.swift */; };
 		493EFC472C339BF7007A4A0F /* WeatherStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493EFC462C339BF7007A4A0F /* WeatherStatusView.swift */; };
 		493EFC4A2C339C05007A4A0F /* WeatherStatusView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 493EFC492C339C05007A4A0F /* WeatherStatusView.xib */; };
 		493EFC4C2C33AB65007A4A0F /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493EFC4B2C33AB65007A4A0F /* UIView+Extension.swift */; };
@@ -71,6 +75,10 @@
 		490DFE552C3E6E210043AB05 /* CalendarDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDetailViewModel.swift; sourceTree = "<group>"; };
 		490DFE582C3F73430043AB05 /* CalendarEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEditViewController.swift; sourceTree = "<group>"; };
 		490DFE5A2C3F7BBA0043AB05 /* CalendarEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEditViewModel.swift; sourceTree = "<group>"; };
+		490DFE5D2C40D0680043AB05 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		490DFE5F2C40D1BC0043AB05 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		490DFE622C40D3250043AB05 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
+		490DFE642C40D3AF0043AB05 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		493EFC462C339BF7007A4A0F /* WeatherStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherStatusView.swift; sourceTree = "<group>"; };
 		493EFC492C339C05007A4A0F /* WeatherStatusView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherStatusView.xib; sourceTree = "<group>"; };
 		493EFC4B2C33AB65007A4A0F /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
@@ -158,7 +166,9 @@
 		490DFE372C3D33250043AB05 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				490DFE5C2C40D05D0043AB05 /* Weather */,
 				490DFE3C2C3D34AD0043AB05 /* WeatherAPI */,
+				490DFE622C40D3250043AB05 /* BaseService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -334,6 +344,16 @@
 				490DFE5A2C3F7BBA0043AB05 /* CalendarEditViewModel.swift */,
 			);
 			path = CalendarEdit;
+			sourceTree = "<group>";
+		};
+		490DFE5C2C40D05D0043AB05 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				490DFE5D2C40D0680043AB05 /* Router.swift */,
+				490DFE5F2C40D1BC0043AB05 /* Service.swift */,
+				490DFE642C40D3AF0043AB05 /* Repository.swift */,
+			);
+			path = Weather;
 			sourceTree = "<group>";
 		};
 		493EFC452C339BE0007A4A0F /* WeatherStatusView */ = {
@@ -651,11 +671,14 @@
 				4986AEB22C32930300581465 /* WeatherWindView.swift in Sources */,
 				490DFE342C3D11AD0043AB05 /* CalendarViewModel.swift in Sources */,
 				493EFC522C33D367007A4A0F /* WeatherHeaderView.swift in Sources */,
+				490DFE5E2C40D0680043AB05 /* Router.swift in Sources */,
 				496DA6AF2C2BA9ED00147617 /* AppDelegate.swift in Sources */,
+				490DFE602C40D1BC0043AB05 /* Service.swift in Sources */,
 				49600AE52C32537F00DDC4F1 /* WeatherCollectionViewCell.swift in Sources */,
 				490DFE592C3F73430043AB05 /* CalendarEditViewController.swift in Sources */,
 				496DA6CF2C2BB34500147617 /* OnboardingViewController.swift in Sources */,
 				49CCED602C2D0DA100F1B513 /* WeatherService.swift in Sources */,
+				490DFE652C40D3AF0043AB05 /* Repository.swift in Sources */,
 				49CCED662C2D399400F1B513 /* WeatherViewModel.swift in Sources */,
 				493EFC822C3539F9007A4A0F /* MapViewController.swift in Sources */,
 				496DA6B92C2BA9ED00147617 /* TrainingSchedule.xcdatamodeld in Sources */,
@@ -671,6 +694,7 @@
 				493EFCAB2C364D3A007A4A0F /* MapPopupViewController.swift in Sources */,
 				490DFE2E2C3D0ED30043AB05 /* CalendarViewController.swift in Sources */,
 				496DA6D32C2BBA9300147617 /* OnboardingCollectionViewCell.swift in Sources */,
+				490DFE632C40D3250043AB05 /* BaseService.swift in Sources */,
 				490DFE5B2C3F7BBA0043AB05 /* CalendarEditViewModel.swift in Sources */,
 				490DFE4D2C3E600B0043AB05 /* CalendarDate.swift in Sources */,
 				49DD4CBE2C2EA16B0000F0B2 /* String.swift in Sources */,
