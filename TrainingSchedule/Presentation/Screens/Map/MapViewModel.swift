@@ -46,7 +46,7 @@ class MapViewModel: NSObject {
         return String(format: "%.2f", polylineDistance)
     }
 
-    func addDistanceToDatabase(distance: Double) {
+    private func addDistanceToDatabase(distance: Double) {
         let runningHistory = RunningHistory(context: context)
         runningHistory.distance = distance
         runningHistory.desc = "You have run \(getTwoDigitsSeperator(number: distance)) meters."
