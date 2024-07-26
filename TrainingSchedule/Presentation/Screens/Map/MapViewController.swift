@@ -79,6 +79,7 @@ class MapViewController: UIViewController {
         if isRunning {
             startButton.setTitle("Start", for: .normal)
             capturePolyline()
+            toggleTabbarItems(value: true)
         } else {
             let cameraUpdate = GMSCameraUpdate.zoom(to: 18.0)
             googleMapView.animate(with: cameraUpdate)
@@ -91,6 +92,8 @@ class MapViewController: UIViewController {
             mapPath = GMSMutablePath()
 
             startButton.setTitle("Stop", for: .normal)
+
+            toggleTabbarItems(value: false)
         }
         isRunning.toggle()
     }
@@ -98,6 +101,15 @@ class MapViewController: UIViewController {
 
 extension MapViewController: MapPopViewControllerDelegate {
     // MARK: - Functions
+    private func toggleTabbarItems(value: Bool) {
+        let arrayOfTabBarItems = tabBarController?.tabBar.items
+        if let barItems = arrayOfTabBarItems, barItems.count > 0 {
+            for item in barItems {
+                item.isEnabled = value
+            }
+        }
+    }
+
     private func drawPolyline(location: CLLocation) {
         mapPath.add(location.coordinate)
 
