@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		490DFE2E2C3D0ED30043AB05 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490DFE2D2C3D0ED30043AB05 /* CalendarViewController.swift */; };
 		490DFE342C3D11AD0043AB05 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490DFE332C3D11AD0043AB05 /* CalendarViewModel.swift */; };
-		490DFE3B2C3D337D0043AB05 /* OnboardingUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490DFE3A2C3D337D0043AB05 /* OnboardingUserDefaults.swift */; };
+		490DFE3B2C3D337D0043AB05 /* GeneralUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490DFE3A2C3D337D0043AB05 /* GeneralUserDefaults.swift */; };
 		490DFE492C3E2EF00043AB05 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490DFE482C3E2EF00043AB05 /* CalendarCell.swift */; };
 		490DFE4D2C3E600B0043AB05 /* CalendarDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490DFE4C2C3E600B0043AB05 /* CalendarDate.swift */; };
 		490DFE512C3E6A620043AB05 /* CalendarDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490DFE502C3E6A620043AB05 /* CalendarDetailViewController.swift */; };
@@ -35,8 +35,11 @@
 		49463A712C2BFCCE00B40AC9 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49463A702C2BFCCE00B40AC9 /* TabbarViewController.swift */; };
 		49463A742C2BFEA200B40AC9 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49463A732C2BFEA200B40AC9 /* UIViewController+Extension.swift */; };
 		49463A792C2C037E00B40AC9 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49463A782C2C037E00B40AC9 /* WeatherViewController.swift */; };
+		49486CC52C52543C00EF6A1C /* AchivementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49486CC42C52543C00EF6A1C /* AchivementViewController.swift */; };
 		49600AE42C32537F00DDC4F1 /* WeatherCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49600AE32C32537F00DDC4F1 /* WeatherCollectionViewCell.xib */; };
 		49600AE52C32537F00DDC4F1 /* WeatherCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49600AE22C32537F00DDC4F1 /* WeatherCollectionViewCell.swift */; };
+		496C311B2C48EFAA007AB8B5 /* RunningHistory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496C31192C48EFAA007AB8B5 /* RunningHistory+CoreDataProperties.swift */; };
+		496C311C2C48EFAA007AB8B5 /* RunningHistory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496C311A2C48EFAA007AB8B5 /* RunningHistory+CoreDataClass.swift */; };
 		496DA6AF2C2BA9ED00147617 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496DA6AE2C2BA9ED00147617 /* AppDelegate.swift */; };
 		496DA6B12C2BA9ED00147617 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496DA6B02C2BA9ED00147617 /* SceneDelegate.swift */; };
 		496DA6B62C2BA9ED00147617 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 496DA6B52C2BA9ED00147617 /* Base */; };
@@ -50,8 +53,6 @@
 		4986AEAF2C3290D600581465 /* RoundCornerStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4986AEAE2C3290D600581465 /* RoundCornerStackView.swift */; };
 		4986AEB22C32930300581465 /* WeatherWindView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4986AEB12C32930300581465 /* WeatherWindView.swift */; };
 		4986AEB42C32931100581465 /* WeatherWindView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4986AEB32C32931100581465 /* WeatherWindView.xib */; };
-		499652342C36860300A8CA4A /* RunningHistory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499652322C36860300A8CA4A /* RunningHistory+CoreDataClass.swift */; };
-		499652352C36860300A8CA4A /* RunningHistory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499652332C36860300A8CA4A /* RunningHistory+CoreDataProperties.swift */; };
 		49CCED622C2D100C00F1B513 /* WeatherStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CCED612C2D100C00F1B513 /* WeatherStatus.swift */; };
 		49CCED662C2D399400F1B513 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CCED652C2D399400F1B513 /* WeatherViewModel.swift */; };
 		49CCED892C2E5CEF00F1B513 /* URLSession+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CCED882C2E5CEF00F1B513 /* URLSession+Extension.swift */; };
@@ -66,7 +67,7 @@
 		446307F252543FBB558E229F /* Pods-TrainingSchedule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrainingSchedule.debug.xcconfig"; path = "Target Support Files/Pods-TrainingSchedule/Pods-TrainingSchedule.debug.xcconfig"; sourceTree = "<group>"; };
 		490DFE2D2C3D0ED30043AB05 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		490DFE332C3D11AD0043AB05 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
-		490DFE3A2C3D337D0043AB05 /* OnboardingUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingUserDefaults.swift; sourceTree = "<group>"; };
+		490DFE3A2C3D337D0043AB05 /* GeneralUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralUserDefaults.swift; sourceTree = "<group>"; };
 		490DFE482C3E2EF00043AB05 /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
 		490DFE4C2C3E600B0043AB05 /* CalendarDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDate.swift; sourceTree = "<group>"; };
 		490DFE502C3E6A620043AB05 /* CalendarDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDetailViewController.swift; sourceTree = "<group>"; };
@@ -92,8 +93,11 @@
 		49463A702C2BFCCE00B40AC9 /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
 		49463A732C2BFEA200B40AC9 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		49463A782C2C037E00B40AC9 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
+		49486CC42C52543C00EF6A1C /* AchivementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchivementViewController.swift; sourceTree = "<group>"; };
 		49600AE22C32537F00DDC4F1 /* WeatherCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCollectionViewCell.swift; sourceTree = "<group>"; };
 		49600AE32C32537F00DDC4F1 /* WeatherCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherCollectionViewCell.xib; sourceTree = "<group>"; };
+		496C31192C48EFAA007AB8B5 /* RunningHistory+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "RunningHistory+CoreDataProperties.swift"; path = "TrainingSchedule/RunningHistory+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		496C311A2C48EFAA007AB8B5 /* RunningHistory+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "RunningHistory+CoreDataClass.swift"; path = "TrainingSchedule/RunningHistory+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		496DA6AB2C2BA9ED00147617 /* TrainingSchedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrainingSchedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		496DA6AE2C2BA9ED00147617 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		496DA6B02C2BA9ED00147617 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,8 +113,6 @@
 		4986AEAE2C3290D600581465 /* RoundCornerStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundCornerStackView.swift; sourceTree = "<group>"; };
 		4986AEB12C32930300581465 /* WeatherWindView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherWindView.swift; sourceTree = "<group>"; };
 		4986AEB32C32931100581465 /* WeatherWindView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherWindView.xib; sourceTree = "<group>"; };
-		499652322C36860300A8CA4A /* RunningHistory+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "RunningHistory+CoreDataClass.swift"; path = "/Users/haru/Developments/TrainingSchedule/TrainingSchedule/RunningHistory+CoreDataClass.swift"; sourceTree = "<absolute>"; };
-		499652332C36860300A8CA4A /* RunningHistory+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "RunningHistory+CoreDataProperties.swift"; path = "/Users/haru/Developments/TrainingSchedule/TrainingSchedule/RunningHistory+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		49CCED612C2D100C00F1B513 /* WeatherStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherStatus.swift; sourceTree = "<group>"; };
 		49CCED652C2D399400F1B513 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 		49CCED882C2E5CEF00F1B513 /* URLSession+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Extension.swift"; sourceTree = "<group>"; };
@@ -173,7 +175,7 @@
 		490DFE382C3D33390043AB05 /* UserDefaults */ = {
 			isa = PBXGroup;
 			children = (
-				490DFE3A2C3D337D0043AB05 /* OnboardingUserDefaults.swift */,
+				490DFE3A2C3D337D0043AB05 /* GeneralUserDefaults.swift */,
 			);
 			path = UserDefaults;
 			sourceTree = "<group>";
@@ -259,6 +261,7 @@
 		490DFE442C3D47B10043AB05 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				49486CC32C52542800EF6A1C /* AchivementView */,
 				493EFC8C2C363EE1007A4A0F /* MapPopupView */,
 			);
 			path = Views;
@@ -388,6 +391,14 @@
 			path = MapPopupView;
 			sourceTree = "<group>";
 		};
+		49486CC32C52542800EF6A1C /* AchivementView */ = {
+			isa = PBXGroup;
+			children = (
+				49486CC42C52543C00EF6A1C /* AchivementViewController.swift */,
+			);
+			path = AchivementView;
+			sourceTree = "<group>";
+		};
 		49600ADF2C32533300DDC4F1 /* CustomWeatherViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -472,8 +483,8 @@
 		4996522D2C36859900A8CA4A /* RunningHistory */ = {
 			isa = PBXGroup;
 			children = (
-				499652322C36860300A8CA4A /* RunningHistory+CoreDataClass.swift */,
-				499652332C36860300A8CA4A /* RunningHistory+CoreDataProperties.swift */,
+				496C311A2C48EFAA007AB8B5 /* RunningHistory+CoreDataClass.swift */,
+				496C31192C48EFAA007AB8B5 /* RunningHistory+CoreDataProperties.swift */,
 			);
 			path = RunningHistory;
 			sourceTree = "<group>";
@@ -518,11 +529,13 @@
 			buildConfigurationList = 496DA6C22C2BA9EE00147617 /* Build configuration list for PBXNativeTarget "TrainingSchedule" */;
 			buildPhases = (
 				2F01106E0AEA5B65B2AD8F7B /* [CP] Check Pods Manifest.lock */,
+				1C1654FC85B6469761C5A65D /* [CP-User] Run Flutter Build congratulation_view Script */,
 				496DA6A72C2BA9ED00147617 /* Sources */,
 				496DA6A82C2BA9ED00147617 /* Frameworks */,
 				496DA6A92C2BA9ED00147617 /* Resources */,
 				496DA6C52C2BAAC400147617 /* ShellScript */,
 				F2D67015D02CB887F3230753 /* [CP] Copy Pods Resources */,
+				5D8FB0854FC33B2939C7CF41 /* [CP-User] Embed Flutter Build congratulation_view Script */,
 			);
 			buildRules = (
 			);
@@ -585,6 +598,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1C1654FC85B6469761C5A65D /* [CP-User] Run Flutter Build congratulation_view Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "[CP-User] Run Flutter Build congratulation_view Script";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nset -u\nsource \"${SRCROOT}/../congratulation_view/.ios/Flutter/flutter_export_environment.sh\"\nexport VERBOSE_SCRIPT_LOGGING=1 && \"$FLUTTER_ROOT\"/packages/flutter_tools/bin/xcode_backend.sh build\n";
+		};
 		2F01106E0AEA5B65B2AD8F7B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -626,6 +649,17 @@
 			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint\n";
 			showEnvVarsInLog = 0;
 		};
+		5D8FB0854FC33B2939C7CF41 /* [CP-User] Embed Flutter Build congratulation_view Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "[CP-User] Embed Flutter Build congratulation_view Script";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nset -u\nsource \"${SRCROOT}/../congratulation_view/.ios/Flutter/flutter_export_environment.sh\"\nexport VERBOSE_SCRIPT_LOGGING=1 && \"$FLUTTER_ROOT\"/packages/flutter_tools/bin/xcode_backend.sh embed_and_thin\n";
+		};
 		F2D67015D02CB887F3230753 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -650,7 +684,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				499652342C36860300A8CA4A /* RunningHistory+CoreDataClass.swift in Sources */,
 				493EFC872C355540007A4A0F /* RoundButton.swift in Sources */,
 				49463A742C2BFEA200B40AC9 /* UIViewController+Extension.swift in Sources */,
 				493EFC472C339BF7007A4A0F /* WeatherStatusView.swift in Sources */,
@@ -673,9 +706,10 @@
 				49DD4CC02C2EA2190000F0B2 /* Double.swift in Sources */,
 				493EFC4C2C33AB65007A4A0F /* UIView+Extension.swift in Sources */,
 				496DA6DA2C2BE6F500147617 /* OnboardingData.swift in Sources */,
+				49486CC52C52543C00EF6A1C /* AchivementViewController.swift in Sources */,
 				493EFC7F2C3538CC007A4A0F /* MapViewModel.swift in Sources */,
 				490DFE562C3E6E210043AB05 /* CalendarDetailViewModel.swift in Sources */,
-				490DFE3B2C3D337D0043AB05 /* OnboardingUserDefaults.swift in Sources */,
+				490DFE3B2C3D337D0043AB05 /* GeneralUserDefaults.swift in Sources */,
 				496DA6D12C2BB7B500147617 /* OnboardingSlide.swift in Sources */,
 				490DFE512C3E6A620043AB05 /* CalendarDetailViewController.swift in Sources */,
 				4986AEAF2C3290D600581465 /* RoundCornerStackView.swift in Sources */,
@@ -690,10 +724,11 @@
 				49CCED622C2D100C00F1B513 /* WeatherStatus.swift in Sources */,
 				490DFE492C3E2EF00043AB05 /* CalendarCell.swift in Sources */,
 				496DA6B12C2BA9ED00147617 /* SceneDelegate.swift in Sources */,
+				496C311C2C48EFAA007AB8B5 /* RunningHistory+CoreDataClass.swift in Sources */,
 				49463A792C2C037E00B40AC9 /* WeatherViewController.swift in Sources */,
 				493EFC892C363553007A4A0F /* Data.swift in Sources */,
 				490DFE542C3E6B0B0043AB05 /* CalendarDetailCell.swift in Sources */,
-				499652352C36860300A8CA4A /* RunningHistory+CoreDataProperties.swift in Sources */,
+				496C311B2C48EFAA007AB8B5 /* RunningHistory+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

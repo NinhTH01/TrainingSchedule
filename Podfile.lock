@@ -1,4 +1,7 @@
 PODS:
+  - Flutter (1.0.0)
+  - FlutterPluginRegistrant (0.0.1):
+    - Flutter
   - GoogleMaps (8.4.0):
     - GoogleMaps/Maps (= 8.4.0)
   - GoogleMaps/Base (8.4.0)
@@ -7,6 +10,8 @@ PODS:
   - SwiftLint (0.55.1)
 
 DEPENDENCIES:
+  - Flutter (from `../congratulation_view/.ios/Flutter`)
+  - FlutterPluginRegistrant (from `../congratulation_view/.ios/Flutter/FlutterPluginRegistrant`)
   - GoogleMaps (= 8.4.0)
   - SwiftLint
 
@@ -15,10 +20,18 @@ SPEC REPOS:
     - GoogleMaps
     - SwiftLint
 
+EXTERNAL SOURCES:
+  Flutter:
+    :path: "../congratulation_view/.ios/Flutter"
+  FlutterPluginRegistrant:
+    :path: "../congratulation_view/.ios/Flutter/FlutterPluginRegistrant"
+
 SPEC CHECKSUMS:
+  Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
+  FlutterPluginRegistrant: 0b732256b4829f9783c18c68e2f9adacc1536955
   GoogleMaps: 8939898920281c649150e0af74aa291c60f2e77d
   SwiftLint: 3fe909719babe5537c552ee8181c0031392be933
 
-PODFILE CHECKSUM: 644629572073727e654ba66b2054a05315194384
+PODFILE CHECKSUM: 9e171231bddf86719d8597772718f73d4595cfb4
 
 COCOAPODS: 1.15.2

@@ -38,7 +38,7 @@ class OnboardingViewController: UIViewController {
         if currentPage == slides.count - 1 {
             let controller = (storyboard?.instantiateViewController(identifier: "HomeTC") as? UITabBarController)!
             controller.modalPresentationStyle = .fullScreen
-            OnboardingUserDefaults().hasOnboarded = true
+            GeneralUserDefaults().hasOnboarded = true
             present(controller, animated: true, completion: nil)
         } else {
             currentPage += 1

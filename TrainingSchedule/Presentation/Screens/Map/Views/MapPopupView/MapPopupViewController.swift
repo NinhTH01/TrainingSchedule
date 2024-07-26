@@ -10,6 +10,7 @@ import UIKit
 struct PopUpContent {
     var distance: String?
     var image: UIImage?
+    var totalDistance: Double?
 }
 
 protocol MapPopViewControllerDelegate: AnyObject {
@@ -59,6 +60,15 @@ extension MapPopupViewController {
         self.blurBackgroundView.alpha = 0
         self.contentView.alpha = 0
         self.contentView.layer.cornerRadius = 10.0
+
+        if popUpContent.totalDistance != nil && popUpContent.totalDistance! > 100.0 {
+            if GeneralUserDefaults().hasAchived == false {
+                GeneralUserDefaults().hasAchived = true
+                let flutterCenterVC = AchivementViewController()
+                present(flutterCenterVC, animated: true, completion: nil)
+            }
+
+        }
     }
 
     func show() {

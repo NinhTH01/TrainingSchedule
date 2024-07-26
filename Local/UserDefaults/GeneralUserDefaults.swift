@@ -7,9 +7,10 @@
 
 import Foundation
 
-class OnboardingUserDefaults: UserDefaults {
+class GeneralUserDefaults: UserDefaults {
     private enum UserDefaultsKeys: String {
         case hasOnboarded
+        case hasAchived
     }
 
     var hasOnboarded: Bool {
@@ -18,6 +19,15 @@ class OnboardingUserDefaults: UserDefaults {
         }
         set {
             setValue(newValue, forKey: UserDefaultsKeys.hasOnboarded.rawValue)
+        }
+    }
+
+    var hasAchived: Bool {
+        get {
+            bool(forKey: UserDefaultsKeys.hasAchived.rawValue)
+        }
+        set {
+            setValue(newValue, forKey: UserDefaultsKeys.hasAchived.rawValue)
         }
     }
 }

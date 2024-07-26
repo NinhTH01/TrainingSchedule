@@ -9,6 +9,7 @@ import UIKit
 import CoreLocation
 import GoogleMaps
 import Combine
+import Flutter
 
 class MapViewController: UIViewController {
     // MARK: - IBOutlet
@@ -121,20 +122,26 @@ extension MapViewController: MapPopViewControllerDelegate {
             let polylineImage = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
 
-            self.mapPopupView.popUpContent = PopUpContent(
-                distance: self.viewModel.calculateDistance(path: self.mapPath),
-                image: polylineImage)
-            self.present(self.mapPopupView, animated: false) {
-                self.mapPopupView.show()
-            }
+            self.viewModel.checkAchivement(completion: { totalDistance in
+                // Present the view controller after fetching the total count
+                self.mapPopupView.popUpContent = PopUpContent(
+                    distance: self.viewModel.calculateDistance(path: self.mapPath),
+                    image: polylineImage,
+                    totalDistance: totalDistance
+                )
+
+                self.present(self.mapPopupView, animated: false) {
+                    self.mapPopupView.show()
+                }
+            })
         }
     }
 
     func setupMap(location: CLLocation) {
         let mapOptions = GMSMapViewOptions()
         mapOptions.camera = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude,
-                                                  longitude: location.coordinate.longitude,
-                                                  zoom: 18.0)
+                                                     longitude: location.coordinate.longitude,
+                                                     zoom: 18.0)
 
         mapOptions.frame = self.mapView.bounds
 

@@ -8,13 +8,20 @@
 import UIKit
 import CoreData
 import GoogleMaps
+import Flutter
+import FlutterPluginRegistrant
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    var flutterEngine: FlutterEngine?
+
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        self.flutterEngine = FlutterEngine(name: "io.flutter", project: nil)
+        self.flutterEngine?.run(withEntrypoint: nil)
+        GeneratedPluginRegistrant.register(with: self.flutterEngine!)
         GMSServices.provideAPIKey("AIzaSyDsLxsd0qDWOO1ANXC-mSzpzYS7V-PahhA")
         return true
     }
@@ -84,5 +91,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
-
 }

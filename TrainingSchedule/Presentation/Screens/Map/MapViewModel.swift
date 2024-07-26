@@ -43,7 +43,31 @@ class MapViewModel: NSObject {
             polylineDistance += location1.distance(from: location2)
         }
         addDistanceToDatabase(distance: polylineDistance)
+
         return String(format: "%.2f", polylineDistance)
+    }
+
+    func checkAchivement(completion: @escaping (Double) -> Void) {
+        var totalDistance = 0.0
+        DispatchQueue.global().async {
+            do {
+                let items = try self.context.fetch(RunningHistory.fetchRequest())
+
+                for item in items {
+                    totalDistance += item.distance
+                }
+
+                DispatchQueue.main.async {
+                    completion(totalDistance)
+                }
+                print(totalDistance)
+            } catch let error {
+                DispatchQueue.main.async {
+                    self.errorMessage = error.localizedDescription
+                }
+            }
+        }
+
     }
 
     private func addDistanceToDatabase(distance: Double) {
